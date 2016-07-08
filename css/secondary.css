@@ -1,0 +1,422 @@
+.page.secondary {
+}
+
+.page.secondary .page-title {
+	left: 60px;
+	top: 136px;
+	width: 328px;
+	height: 66px;
+	z-index: 1;
+	text-align: center;
+	letter-spacing: 1px;
+	color: #FCFDFD;
+	line-height: 72px;
+	/*background: url('../images/menubar_highlight.png') no-repeat;*/
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color: #56a2d6;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	font-weight: bold;
+}
+
+.page.secondary #header {
+	width: 100%;
+	height: 132px;
+	position: absolute;
+	/*background: url(../images/bk_secondary_gradient.png) top left no-repeat;*/
+}
+
+.page.secondary #header #heading1 {
+	height: 90px;
+	top: 100px;
+	left: 740px;
+	position: absolute;
+	display: inline-block;
+	float: left;
+}
+
+.page.secondary #header #heading1 p {
+	color: #45466D;
+}
+
+.page.secondary #header #heading2 {
+	width: 340px;
+	height: 66px;
+	top: 200px;
+	left: 55px;
+	position: absolute;
+	/*display: none;*/
+	background: url('../images/bar_secondlevel.png') no-repeat;	
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover; 
+	float: left;
+	z-index: 1;
+}
+
+.page.secondary #header #heading2 p {
+	color: #FBFBFB;
+	text-align: center;
+	top: px;
+	padding-top: 16px;
+}
+
+
+.page.secondary #content {
+	width: 100%;
+	height: 588px;
+	top: 132px;
+	position: absolute;
+}
+
+.page.secondary #menu {
+	width: 100%;
+	height: 100%;
+}
+	
+.page.secondary #menu .major {
+	position: absolute;
+	width: 328px;
+	height: 425px;
+	left: 60px;
+	top: 128px;
+	padding: 35px 0 0 0;
+	background: #57567c;
+	/*box-shadow: 2px 2px 2px 0px #555;*/
+}
+
+.page.secondary #menu .major a {
+	position: relative;
+	display: block;
+	height: 32px;
+	margin: 0;
+	padding: 10px 5px 5px 15px;
+	text-align: left;
+	font-size: 30px;
+}
+.page.secondary #menu .major a.back-button {
+	position: absolute;
+	width: 308px;
+	font-size: 26px;
+	font-weight: bold;
+	text-align: center;
+	background-color: #318bc8;
+	bottom: 60px;
+}
+
+.page.secondary #menu .major a.selected {
+	background: #6b9c37;
+}
+
+
+.page.secondary #menu .minor {
+	position: absolute;
+	width: 840px;
+	height: 588px;
+	top: 74px;
+	left: 440px;
+}
+
+.page.secondary #menu .minor .arrow-button {
+	display: block;
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	top: 416px;
+	border-radius: 30px;
+	margin: 0;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.page.secondary #menu .minor .arrow-button.sub-page-prev {	
+	left: 0px;
+}
+
+.page.secondary #menu .minor .arrow-button.sub-page-next {
+	right: 280px;
+}
+
+.page.secondary #menu .minor .arrow-button:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.page.secondary #menu .minor .arrow-left {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	margin: -20px 0 0 -15px;
+}
+
+.page.secondary #menu .minor .arrow-right {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	margin: -20px 0 0 -5px;
+}
+
+.page.secondary #menu .minor .back-tab img {
+	width: 100%;
+	height: 98%;
+	/*margin: 40px 0px 0px 25px;*/
+
+}
+
+.page.secondary #menu .minor .menu-tab {
+	position: absolute;
+	display: none;
+	width: 800px;
+}
+
+.page.secondary #menu .minor .sub-page {
+	display: none;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.page.secondary #menu .minor .sub-header {
+	margin-top: 20px;
+	height: 50px;
+	color: #FFFF92;
+	line-height: 26pt;
+}
+
+.page.secondary #menu .minor .sub-tabimg {
+	width: 510px;
+	height: 133px;
+	margin-top: -222px;
+	margin-left: 268px;
+}
+
+.page.secondary #menu .minor .sub-footer {
+	position: relative;
+	height: 50px;
+	color: #FFFF92;
+	text-align: center;
+	top: -70px;
+	left: -110px;
+}
+
+.page.secondary #menu .minor .sub-content {
+    margin-top: 40px;
+	height: 480px;
+    overflow: hidden;
+    position: relative;
+}
+
+.page.secondary #menu .minor .sub-content p {
+	margin-bottom: 0px;
+	line-height: 28pt;
+	right: 0px;
+	bottom: 0px;
+}
+
+.page.secondary #menu .minor .sub-content .sub-image1 img
+,.page.secondary #menu .minor .sub-content .sub-image2 img {
+	width: 100%;
+	height: 100%;
+
+}
+
+/* Layout 1, text only */
+.page.secondary #menu .minor .sub-content.layout1 {
+	
+}
+
+.page.secondary #menu .minor .sub-content.layout1 .sub-text1{
+	display: inline-block;
+	width: 730px;
+	padding-top: 40px;
+}
+
+.page.secondary #menu .minor .sub-content.layout1 .sub-text2{
+	display: inline-block;
+	width: 100%;
+	padding-top: 10px;
+}
+
+.page.secondary #menu .minor .sub-content.layout1 .sub-image1{
+	display: none;
+}
+
+.page.secondary #menu .minor .sub-content.layout1 .sub-image2{
+	display: none;
+}
+
+/* Layout 2, text and image side by side */
+.page.secondary #menu .minor .sub-content.layout2 {
+	
+}
+
+.page.secondary #menu .minor .sub-content.layout2 .sub-text1{
+	display: inline-block;
+	float: left;
+	width: 510px;
+	padding-top: 40px;
+}
+
+.page.secondary #menu .minor .sub-content.layout2 .sub-text2{
+	display: none;
+}
+
+.page.secondary #menu .minor .sub-content.layout2 .sub-image1{
+	display: inline-block;
+	float: left;
+	width: 260px;
+	padding-top: 0px;
+	padding-left: 10px;
+}
+
+.page.secondary #menu .minor .sub-content.layout2 .sub-image2{
+	display: none;
+}
+
+/* Layout 3, text and image aligns vertically */
+.page.secondary #menu .minor .sub-content.layout3 {
+	
+}
+
+.page.secondary #menu .minor .sub-content.layout3 .sub-text1{
+	float: none;
+	height: 210px;
+	width: 720px;
+	padding-top: 40px;
+}
+
+.page.secondary #menu .minor .sub-content.layout3 .sub-text2{
+	display: none;
+}
+
+.page.secondary #menu .minor .sub-content.layout3 .sub-image1{
+	float: none;
+	height: 220px;
+}
+
+.page.secondary #menu .minor .sub-content.layout3 .sub-image2{
+	display: none;
+}
+
+/* Layout 4, text 1 on top, text 2 and image at bottom */
+.page.secondary #menu .minor .sub-content.layout4 {
+	
+}
+
+.page.secondary #menu .minor .sub-content.layout4 .sub-text1{
+	display: block;
+	float: none;
+	height: 220px;
+	padding-top: 40px;
+}
+
+.page.secondary #menu .minor .sub-content.layout4 .sub-text2{
+	float: left;
+	width: 500px;
+	height: 200px;
+}
+
+.page.secondary #menu .minor .sub-content.layout4 .sub-image1{
+	float: left;
+	width: 240px;
+	height: 200px;
+}
+
+.page.secondary #menu .minor .sub-content.layout4 .sub-image2{
+	display: none;
+}
+
+/* Layout 5, text overlays image - image in corner margin*/
+.page.secondary #menu .minor .sub-content.layout5 {
+	width: 840px;
+	height: 494px;
+}
+
+.page.secondary #menu .minor .sub-content.layout5 .sub-text1{
+	display: block;
+	position: absolute;
+	height: 405px;
+	width: 710px;
+	top: 50px;
+	left: 0px;
+	padding: 0px;
+	z-index: 1;
+	background: rgba(0,0,0,0);
+}
+
+.page.secondary #menu .minor .sub-content.layout5 .sub-text2{
+	display: none;
+}
+
+.page.secondary #menu .minor .sub-content.layout5 .sub-image1{
+	width: 100%;
+	height: 100%;
+	float: right;
+}
+
+.page.secondary #menu .minor .sub-content.layout5 .sub-image2{
+	display: none;
+}
+
+/* Layout 5b, text overlays image */
+.page.secondary #menu .minor .sub-content.layout5b {
+	width: 840px;
+	height: 494px;
+}
+
+.page.secondary #menu .minor .sub-content.layout5b .sub-text1{
+	display: block;
+	position: absolute;
+	height: 405px;
+	width: 640px;
+	bottom: 50px;
+	left: 0px;
+	padding: 0px;
+	z-index: 1;
+	background: rgba(0,0,0,0);
+}
+
+.page.secondary #menu .minor .sub-content.layout5b .sub-text2{
+	display: none;
+}
+
+.page.secondary #menu .minor .sub-content.layout5b .sub-image1{
+	width: 100%;
+	height: 100%;
+
+}
+
+.page.secondary #menu .minor .sub-content.layout5b .sub-image2{
+	display: none;
+}
+
+
+/* Layout 6, ONLY an image (map) */
+.page.secondary #menu .minor .sub-content.layout6 {
+	
+}
+
+.page.secondary #menu .minor .sub-content.layout6 .sub-text1{
+	display: none;
+}
+
+.page.secondary #menu .minor .sub-content.layout6 .sub-text2{
+	display: none;
+}
+
+.page.secondary #menu .minor .sub-content.layout6 .sub-image1{
+	width: 100%;
+	height: 100%;
+}
+
+.page.secondary #menu .minor .sub-content.layout6 .sub-image2{
+	display: none;
+}
+
+

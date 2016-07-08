@@ -1,0 +1,138 @@
+	<survey>
+       <desc></desc>
+       <disabled>0</disabled>
+       <id>2</id>
+       <name>Feedback</name>
+       <questions>
+              <question>
+                     <answers>
+                            <answer>
+								   <id>1</id>
+                                   <response>
+                                          <id>6</id>
+                                          <notifications></notifications>
+                                          <text>Thank you for your feedback.&lt;br&gt;&lt;br&gt;We are always looking for ways to provide compassionate care and help our patients be as comfortable as possible.</text>
+                                      </response>
+                                   <sequence>1</sequence>
+                                   <text>Yes</text>
+                                   <value>1</value>
+                               </answer>
+                            <answer>
+								   <id>2</id>
+                                   <response>
+                                          <id>6</id>                                          
+										  <notifications>
+										            <notification>
+                                                        <body>Urgent Message Room %room% Service Opportunity S</body>
+                                                        <description>Send message</description>
+                                                        <id>0</id>
+                                                        <name>Vocero</name>
+                                                        <notificationcondition>1</notificationcondition>
+                                                        <param></param>
+                                                        <payload></payload>
+                                                        <subject>%servicegroup% {W M C} **urgent**</subject>
+                                                        <type>email</type>
+                                                        <uri>Vocera-Alert@nsmtp.kp.org</uri>
+                                                    </notification>
+										  </notifications>
+                                          <text>Thank you for your feedback.&lt;br&gt;&lt;br&gt;We're sorry you do not feel safe in our environment.  A care team member will stop by to hear your concerns.</text>
+                                      </response>
+                                   <sequence>2</sequence>
+                                   <text>No</text>
+                                   <value>0</value>
+                               </answer>
+                        </answers>
+                     <answertype>select</answertype>
+                     <id>7</id	>
+                     <sequence>1</sequence>
+                     <text>Our goal is to provide a safe environment.&lt;br&gt;&lt;br&gt;Have your safety needs been met, such as assistance to the bathroom, getting in and out of bed, and items placed within your reach?</text>
+                     <title>My Safety</title>
+                 </question>
+              <question>
+                     <answers>
+                            <answer>
+							<id>1</id>
+                                   <response>
+                                          <id>5</id>
+                                          <text>Thank you for your feedback.&lt;br&gt;&lt;br&gt;We are always looking for ways to provide compassionate care and help our patients be as comfortable as possible.</text>
+                                      </response>
+                                   <sequence>1</sequence>
+                                   <text>Yes</text>
+                                   <value>1</value>
+                               </answer>
+                            <answer>
+							<id>2</id>
+                                   <response>
+                                          <id>7</id>
+                                          <notifications>
+                                                 <notification>
+                                                        <body>Urgent Message Room %room% Service Opportunity C</body>
+                                                        <description>Send message</description>
+                                                        <id>0</id>
+                                                        <name>Vocero</name>
+                                                        <notificationcondition>1</notificationcondition>
+                                                        <param></param>
+                                                        <payload></payload>
+                                                        <subject>%servicegroup% {W M C} **urgent**</subject>
+                                                        <type>email</type>
+                                                        <uri>Vocera-Alert@nsmtp.kp.org</uri>
+                                                    </notification>
+                                             </notifications>
+                                          <text>Thank you for your feedback.&lt;br&gt;&lt;br&gt;We're sorry for not providing an exceptional care experience. A care team member will stop by to hear your concerns.</text>
+                                      </response>
+                                   <sequence>2</sequence>
+                                   <text>No</text>
+                                   <value>0</value>
+                               </answer>
+                        </answers>
+                     <answertype>select</answertype>
+                     <id>8</id>
+                     <sequence>2</sequence>
+                     <text>Our goal is to provide an exceptional care experience.&lt;br&gt;&lt;br&gt;Have we been caring and compassionate to you and your family?</text>
+                     <title>My Care</title>
+                 </question>
+              <question>
+                     <answers>
+                            <answer>
+							<id>1</id>
+                                   <response>
+                                          <id>5</id>
+                                          <text></text>
+                                      </response>
+                                   <sequence>1</sequence>
+                                   <text>Yes</text>
+                                   <value>1</value>
+                               </answer>
+                            <answer>
+							<id>2</id>
+                                   <response>
+                                          <id>8</id>
+                                          <notifications>
+                                                 <notification>
+                                                        <body>Urgent Message Room %room% Service Opportunity E</body>
+                                                        <description>Send message</description>
+                                                        <id>0</id>
+                                                        <name>Vocero</name>
+                                                        <notificationcondition>1</notificationcondition>
+                                                        <param></param>
+                                                        <payload></payload>
+                                                        <subject>%servicegroup% {W M C} **urgent**</subject>
+                                                        <type>email</type>
+                                                        <uri>Vocera-Alert@nsmtp.kp.org</uri>
+                                                    </notification>
+                                             </notifications>
+                                          <text>Thank you for your feedback.&lt;br&gt;&lt;br&gt;We're sorry for not providing care in a timely manner. A care team member will stop by to hear your concerns.</text>
+                                      </response>
+                                   <sequence>2</sequence>
+                                   <text>No</text>
+                                   <value>0</value>
+                               </answer>
+                        </answers>
+                     <answertype>select</answertype>
+                     <id>9</id>
+                     <sequence>3</sequence>
+                     <text>Our goal is to provide care in a timely manner.&lt;br&gt;&lt;br&gt;Are we meeting your expectations?</text>
+                     <title>My Expectations</title>
+                 </question>
+          </questions>
+   </survey>

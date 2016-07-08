@@ -1,0 +1,448 @@
+*	{
+	line-height:1;
+	margin: 0px;
+	outline: 0px;
+	padding: 0px;
+}
+
+html	{
+	height: 100%;
+	width: 100%;
+}
+
+body	{
+	background: rgba(0,0,0,1.0);
+	font-family: Arial, Helvetica, sans-serif;
+	color: rgba(255,255,255,1.0);
+	height: 100%;
+	width: 100%;
+}
+
+a, a:active, a:visited, a:hover {
+	text-decoration: none;
+}
+
+#clear {
+clear: both;
+}
+
+#watchvideo {
+	background: url(../images/bk_secondlevel_care_green.jpg) top center no-repeat;
+	width: 1280px;
+	height: 720px;
+	position: absolute;
+}
+
+#watchvideo #banner	{
+	width: 1280px;
+	height: 100px;
+	margin: 65px 0px 0px 0px;
+	position: absolute;
+}
+
+#watchvideo #banner p	{
+	width: 1200px;
+	height: 50px;
+	font-size: 28px;
+	line-height: 50px;
+	font-weight: 500px;
+	margin: 0px 35px 0px 0px;
+	color: rgba(255,255,255,1.00);
+	float: right;
+	position: relative;
+	text-align: right;
+}
+
+#watchvideo #banner p span	{
+	font-size: 32px;
+	color: rgba(254,242,0,1.00);
+}
+
+#watchvideo #label	{
+	width: 525px;
+	height: 77px;
+	margin: 127px 0px 0px 40px;
+	float: left;
+	position: absolute;
+}
+
+#watchvideo #label p	{
+	width: 420px;
+	height: 77px;
+	font-size: 44px;
+	line-height: 77px;
+	font-weight: 800px;
+	margin: 0px 0px 0px 35px;
+	color: rgba(255,255,255,1.00);
+	float: left;
+	position: relative;
+	text-align: left;
+}
+
+#watchvideo #label img	{
+	margin: 10px 0px 0px 0px;
+	float: right;
+}
+
+#watchvideo #title	{
+	width: 548px;
+	min-height: 60px;
+	margin: 240px 0px 0px 75px;
+	font-size: 44px;
+	line-height: 50px;
+	font-weight: 500px;
+
+	float: left;
+	position: absolute;
+}
+
+#watchvideo #duration	{
+	width: 548px;
+	min-height: 60px;
+	margin: 310px 0px 0px 75px;
+	font-size: 44px;
+	line-height: 50px;
+	font-weight: 500px;
+
+	float: left;
+	position: absolute;
+}
+
+#watchvideo #selections	{
+	width: 548px;
+	min-height: 60px;
+	margin: 230px 0px 0px 40px;
+	float: left;
+	position: absolute;
+}
+
+#watchvideo #selections ul {
+	list-style-type: none;
+}
+
+#watchvideo #selections a	{
+	width: 534px;
+	height: 60px;
+	font-size: 44px;
+	line-height: 70px;
+	font-weight: 600px;
+	padding-left: 15px;
+	float: left;
+	text-align: left;
+	position: relative;
+	color: rgba(255,255,255,1.00);
+}
+
+#watchvideo #selections a.play {
+	font-size: 30px;
+	margin-bottom: 10px;
+	margin-top: 250px;
+	text-align: center;
+}
+
+#watchvideo #selections a.back	{
+	font-size: 30px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+#watchvideo #selections a.active, #watchvideo #selections a:hover	{
+	background: rgba(141,198,60,1.00);
+}
+
+#watchvideo #background	{
+	background-position: 50% 0%; 
+	background-repeat: no-repeat;
+	width: 693px;
+	height: 515px;
+	margin: 205px 0px 0px 587px;
+	float: left;
+	opacity: 1.00;
+	position: absolute;
+}
+
+#watchvideo.about #background	{
+	background-image: url(../images/img_relax_remarkable.jpg); 
+}
+
+#watchvideo #background.textoverlay {
+	opacity: 0.1; 
+}
+
+#watchvideo #selection	{
+	width: 693px;
+	height: 515px;
+	margin: 205px 0px 0px 587px;
+	float: left;
+	display: inline-block;
+	position: absolute;
+	z-index: 1;
+}
+
+#watchvideo #selection #heading	{
+	width: 625px;
+	color: rgba(249,238,132,1.00);
+	font-size: 30px;
+	line-height: 36px;
+	font-weight: 600px;
+	margin: 25px 0px 0px 25px;
+	float: left;
+	text-align: left;
+}
+
+#watchvideo #selection #body	{
+	width: 625px;
+	height: 100%;
+	color: rgba(255,255,255,1.00);
+}
+
+#watchvideo #selection #body #nextpage	{
+	background-color: #ffffff;
+	opacity: 0;
+	position: absolute;
+	z-index: 10;
+	left: 90%;
+	width: 10%;
+	height: 100%;
+	display: inherit;
+	cursor: hand;
+	float: right;
+}
+
+#watchvideo #selection #body #prevpage	{
+	background-color: #ffffff;
+	opacity: 0;
+	position: absolute;
+	z-index: 10;
+	left: 0;
+	width: 10%;
+	height: 100%;
+	display: inherit;
+	cursor: hand;
+	float: right;
+}
+
+#watchvideo #selection #body #nextpage:hover, #watchvideo #selection #body #prevpage:hover {
+	cursor: pointer;
+	opacity: 0.3;
+	color: blue;
+}
+
+#watchvideo #selection #body p	{
+	width: 625px;
+	min-height: 42px;
+	font-size: 30px;
+	line-height: 42px;
+	font-weight: 600px;
+	float: left;
+	text-align: left;
+	margin: 25px 25px 0px 25px;
+	color: rgba(255,255,255,1.00);
+	display: none;
+}
+
+#watchvideo #selection #body p.active	{
+	display: inherit;
+}
+	
+#watchvideo #selection #body p span	{
+	color: rgba(255,255,102,1.00);
+}
+
+#watchvideo #selection #body p span.rjust	{
+	float: right;
+	color: rgba(255,255,255,1.00);
+}
+
+#watchvideo #selection #body p.list	{
+	width: 625px;
+	font-size: 30px;
+	line-height: 40px;
+	font-weight: 600px;
+	float: left;
+	text-align: left;
+	margin: 0px 25px 0px 25px;
+	color: rgba(249,238,132,1.00);
+}
+
+#watchvideo #selection #body ul	{
+	width: 625px;
+	font-weight: 600px;
+	float: left;
+	margin: 0px 25px 0px 50px;
+}
+
+#watchvideo #selection #body ul li	{
+	margin-left: 25px;
+	font-size: 30px;
+	line-height: 42px;
+	text-align: left;
+	color: rgba(255,255,255,1.00);
+}
+
+#watchvideo #selection #body ul li span	{
+	color: rgba(249,238,132,1.00);
+}
+
+#watchvideo #selection #body p.clickable	{
+	background: rgba(49,139,200,1.00);
+	width: 300px;
+	min-height: 36px;
+	padding: 10px;
+	font-size: 30px;
+	line-height: 36px;
+	font-weight: 600px;
+	text-align: center;
+	margin: 0px 0px 15px 25px;
+	color: rgba(255,255,255,1.00);
+}
+
+#watchvideo #selection #body p.middle	{
+	margin-top: 200px;
+}
+
+#watchvideo #selection #body p.narrow	{
+	width: 500px;
+	margin-right: 0px;
+}
+
+#watchvideo #selection #body p.wide	{
+	width: 800px;
+	margin-right: 0px;
+}
+
+#watchvideo #selection #body p.small	{
+	font-size: 28px;
+	line-height: 32px;
+}
+
+#watchvideo #selection #body p.smaller	{
+	font-size: 24px;
+	line-height: 28px;
+	font-weight: 600px;
+}
+
+#watchvideo #selection #body p.larger	{
+	font-size: 42px;
+	line-height: 48px;
+}
+
+#watchvideo #selection #body p.nomargin	{
+	margin-top: 0px;
+}
+
+#watchvideo #selection #body ul.topmargin,
+#watchvideo #selection #body p.topmargin	{
+	margin-top: 50px;
+}
+
+#watchvideo #selection #body p.lower	{
+	margin-top: 100px;
+}
+
+#watchvideo #selection #body p.botmargin	{
+	margin-bottom: 25px;
+}
+
+#watchvideo #selection #body p.leftmargin	{
+	margin-left: 50px;
+}
+
+#watchvideo #selection #body p.highlight,
+#watchvideo #selection #body p span.highlight	{
+	color: rgba(255,255,102,1.00);
+}
+
+#watchvideo #selection #body p.lightcolor,
+#watchvideo #selection #body p span.lightcolor	{
+	color: rgba(194,214,181,1.00);
+}
+
+#watchvideo #selection #body p.nocolor,
+#watchvideo #selection #body p span.nocolor	{
+	color: rgba(255,255,255,1.00);
+}
+
+#watchvideo #selection #body p.italic,
+#watchvideo #selection #body p span.italic	{
+	font-style: italic;
+}
+
+
+/* watchvideo.noimages */
+
+#watchvideo.noimages #background {
+	display: none;
+}
+
+#watchvideo.noimages #selection #carousel a img	{
+	display: none;
+}
+
+/* watchvideo.lightdark */
+
+#watchvideo.lightdark {
+	background: url(../images/bk2-dk_secondlevel.jpg) top center no-repeat;
+}
+
+#watchvideo.tv.lightdark {
+	background: url(../images/bk2-dk_movies.jpg) top center no-repeat;
+}
+
+#watchvideo.lightdark #selections a.active	{
+	background: rgba(0,138,175,1.00);
+}
+
+/* watchvideo.darklight */
+
+#watchvideo.darklight {
+	background: url(../images/bk3-lt_secondlevel.jpg) top center no-repeat;
+}
+
+#watchvideo.tv.darklight {
+	background: url(../images/bk3-lt_movies.jpg) top center no-repeat;
+}
+
+#watchvideo.darklight #banner p	{
+	color: rgba(68,85,95,1.00);
+}
+
+#watchvideo.darklight #banner p span	{
+	color: rgba(23,62,89,1.00);
+}
+
+#watchvideo.darklight #label p	{
+	color: rgba(68,85,95,1.00);
+}
+
+#watchvideo.darklight #selections a	{
+	color: rgba(68,85,95,1.00);
+}
+
+#watchvideo.darklight #selections a.active	{
+	background: rgba(254,255,153,1.00);
+}
+
+#watchvideo.darklight #selection #heading,
+#watchvideo.darklight #selection #body,
+#watchvideo.darklight #selection #body p,
+#watchvideo.darklight #selection #body p span,
+#watchvideo.darklight #selection #body ul,
+#watchvideo.darklight #selection #body ul li,
+#watchvideo.darklight #selection #body ul li span	{
+	color: rgba(23,62,89,1.00);
+}
+
+#watchvideo.darklight #selection #title	{
+	background: rgba(254,255,153,1.00);
+	color: rgba(23,62,89,1.00);
+}
+
+#watchvideo.darklight #selection #focus	{
+	border: 8px rgba(254,255,153,1.00) solid;
+	border-top: 20px rgba(254,255,153,1.00) solid;
+}
+
+#watchvideo.darklight #selection #slider #movie	{
+	color: rgba(23,62,89,1.00);
+}

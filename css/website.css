@@ -1,0 +1,51 @@
+#website {
+	z-index:99999999;
+	background-color: #000000;
+	width: 100%;
+	align: center;
+}
+
+#website #mask {
+	position:absolute;
+	width: 200px;
+	height: 200px;
+	left: 521px;
+	top: 284px;
+	background-color: #000000;
+	opacity: 0.5;
+	text-align: center;
+	border-radius:8px;
+}
+
+#website #mask #icon {
+	position: absolute;
+	top: 36px;
+	left: 36px;
+	background: url(../images/loading18.gif) center center no-repeat;
+	width: 128px;
+	height: 128px;
+}
+
+#website #close {
+	right: 46px;
+	top: 0px;
+	opacity: 0.8;
+}
+
+#website #content {
+	background-color: #1e77ae;
+	margin: 0;
+	padding: 0;
+	color: #ffffff;
+	width: 100%;
+	height: 100%;
+}
+
+#website #content iframe {
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	color: #ffffff;
+	width: 100%;
+	height: 100%;
+}

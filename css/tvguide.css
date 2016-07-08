@@ -1,0 +1,475 @@
+#tvguide {
+    background: #165389 url(../images/bk_epg-grid_Sunnyside.png) top left no-repeat;
+}
+
+#tvguide.translucent {  background: transparent; }
+#tvguide.translucent > div { display: none }
+#tvguide.translucent  div.osd-player { display: block; }
+
+#channel-label {
+    width: 1280px;
+    height: 720px;
+    display: none;
+    position: absolute;
+    z-index: 999999;
+    background: #000000;
+}
+
+#channel-label #loadinginfo {
+    height: 20px;
+    margin-top: 25px;
+    margin-left: 25px;
+    padding: 25px;
+    background: #113663;
+    color: white;
+    float: left;
+}
+
+#channel-label #loadinginfo p {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#channel-label #loadinginfo span {
+    display: block;
+    white-space: pre-wrap;
+    font-weight: normal;
+    color: #361A16;
+}
+
+#channel-label #loadinginfo span.error {
+    font-size: 24px;
+}
+
+#channel-label #loadinginfo span.stack {
+    font-size: 18px;
+}
+
+#tvguide #mask {
+    position: fixed;
+    width: 1280px;
+    height: 720px;
+    left: 0;
+    top: 0;
+    background-color: #000000;
+    opacity: 0.9;
+    z-index: 10;
+    text-align: center;
+    display: none;
+}
+
+#tvguide #icon {
+    position: absolute;
+    top: 320px;
+    left: 619px;
+    background: url(../images/loading18.gif) center center no-repeat;
+    width: 128px;
+    height: 128px;
+}
+
+#tvguide #channelinfo {
+    background: #113663;
+    color: white;
+    height: 25px;
+    display: none;
+    margin: 25px 0px 0px 25px;
+    position: absolute;
+}
+#tvguide #mask p {
+    position: absolute;
+    top: 460px;
+    width: 1280px;
+    font-size: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#tvguide #gridinfo {
+    width: 1200px;
+    margin: 0 20px;
+    position: absolute;
+    z-index: 1;
+}
+
+#tvguide #gridinfo div#current {
+    color: #ffffff;
+    width: 1204px;
+    height: 170px;
+    left: 0px;
+    position: absolute;
+}
+
+#tvguide #gridinfo div#current p {
+    min-height: 32px;
+    color: #000000;
+    font-size: 28px;
+    line-height: 28px;
+    float: left;
+    text-overflow: ellipsis;
+}
+
+#tvguide #gridinfo div#current p.title {
+    margin: 108px 0px 0px 250px;
+    width: 545px;
+    padding:  20px 10px 10px 20px;
+    overflow: hidden;
+    position: absolute;
+    color: #ffffff;
+    background: #273758;
+    border-radius: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 30px;
+    text-align: center;
+}
+
+#tvguide #gridinfo div#current p.channel {
+    color: #ffffff;
+    margin: 15px 0 0 0;
+    text-align: left;
+    float: left;
+    font-size: 24px;
+    width: 225px;
+}
+
+#tvguide #gridinfo div#current p.time {
+    color: #ffffff;
+    width: 268px;
+    font-size: 26px;
+    position: absolute;
+    margin-top: 130px;
+    text-align: center;
+}
+
+#tvguide #gridinfo div#current p.synopsis {
+    font-size: 28px;
+    line-height: 32px;
+}
+
+#tvguide #gridinfo div#current p.date {
+    width: 385px;
+    height: 25px;
+    left: 840px;
+    top: 95px;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: normal;
+    text-align: right;
+    position: absolute;
+}
+
+#tvguide #gridinfo div#current p.message {
+    width: 385px;
+    height: 25px;
+    left: 840px;
+    top: 130px;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: normal;
+    text-align: right;
+    position: absolute;
+}
+
+#tvguide #gridinfo div#current p.message span {
+    color: #aaa;
+    margin-right: 100px;
+}
+
+#tvguide #gridinfo div#current p.message a {
+    color: #aaa;
+}
+
+#tvguide #gridinfo div#current img {
+    width: 300px;
+    height: 185px;
+    float: right;
+}
+
+#tvguide #gridpanel {
+    width: 1260px;
+    height: 528px;
+    margin-top: 175px;
+    margin-left: 15px;
+    position: relative;
+}
+
+#tvguide #gridpanel #header {
+    background: #93CCE0;
+    /* box-shadow: 0 14px 30px -8px #000; */
+    position: absolute;
+    top: 0;
+
+    height: 68px;
+    z-index: 2;
+    padding-right: 1px;
+    padding-left: 1px;
+}
+
+#tvguide #gridpanel #header a {
+    width: 41px;
+    height: 64px;
+
+    /* top: -17px; */
+    display: block;
+    position: absolute;
+    z-index: 1;
+}
+
+/*#tvguide #gridpanel #header a#prev {
+    background: url(../images/button_left.png) center center no-repeat;
+    left: 5px;
+}
+#tvguide #gridpanel #header a#prev:active {
+    background: url(../images/button_left_click.png) center center no-repeat;
+}
+
+#tvguide #gridpanel #header a#next {
+    background: url(../images/button_right.png) center center no-repeat;
+    right: 5px;
+}
+
+#tvguide #gridpanel #header a#next:active {
+    background: url(../images/button_right_click.png) center center no-repeat;
+} */
+
+#tvguide #gridpanel #header div {
+    width: 247px;
+    height: 64px;
+    color: #000000;
+    border : 2px ridge #DDDDDD;
+    border-top: 4px ridge #DDDDDD;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 0px;
+    line-height: 64px;
+    position: relative;
+    float: left;
+}
+
+#tvguide #gridpanel #header div#today {
+    width: 240px;
+}
+
+#tvguide #gridpanel #content {
+    height: 462px;
+    width: 1260px;
+    overflow: hidden;
+    position: relative;
+    top: 68px;
+    border-radius: 10px;
+}
+
+/*.iScrollVerticalScrollbar {
+	background: #dddddd;	
+    position: absolute;
+    z-index: 9;
+    width: 46px;
+    top: 5px;
+    right: 0px;
+    bottom: 0px;
+    overflow: hidden;
+}
+
+.iScrollVerticalScrollbar.iScrollBothScrollbars {
+    bottom: 18px;
+}
+
+.iScrollIndicator {
+    position: absolute;
+    background: #cc3f6e;
+    border-color: #FFFFFF;
+    border-radius: 8px;
+}
+
+.iScrollVerticalScrollbar .iScrollIndicator {
+    width: 44px;
+    background: #edb67f;
+    border-left: 1px solid #4D86A8;
+    border-right: 1px solid #000000;
+    opacity: 0.8;
+}*/
+
+#tvguide #gridpanel #loading {
+    background: transparent url(../images/loading18.gif) center center no-repeat;
+    width: 100%;
+    height: 450px;
+    line-height: 200px;
+    text-align: center;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 0;
+}
+
+#tvguide #gridpanel #program-list {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+}
+
+#tvguide #gridpanel #program {
+    width: 100%;
+    margin: 0;
+    position: relative;
+    float: left;
+    list-style-type: none;
+}
+
+#tvguide #gridpanel #program li {
+    position: relative;
+    margin: 0;
+    height: 66px;
+}
+
+#tvguide #gridpanel div.channelstation {
+    width: 249px;
+    height: 64px;
+    display: inline-block;
+    z-index: 1;
+}
+
+#tvguide #gridpanel div.channelstation div.channelname {
+    height: 66px;
+    padding: 0;
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+#tvguide #gridpanel div.channelstation div.channelname span {
+    color: #000000;
+    font-size: 24px;
+    background: #93CCE0;
+    border: 4px ridge #DDDDDD;
+    line-height: 64px;
+    padding: 0 5px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*#tvguide #gridpanel .channelstation .channelname.active span {
+    background: rgba(245, 128, 37, 1.0);
+    color: #000;
+}*/
+
+#tvguide #gridpanel div.channel {
+    height: 64px;
+    position: absolute;
+    left: 242px;
+    top: 0;
+    /* z-index: 0; */
+}
+
+#tvguide #gridpanel div.program {
+    width: 250px;
+    height: 66px;
+    padding: 0;
+    position: relative;
+    float: left;
+    cursor: pointer;
+}
+
+#tvguide #gridpanel div.program span {
+    background: #0078ad;
+    color: #ffffff;
+    font-size: 24px;
+    border : 2px ridge #DDDDDD;
+    border-top: 4px ridge #DDDDDD;
+    border-bottom: 4px ridge #DDDDDD;
+    padding: 0 5px;
+    display: block;
+    height: 64px;
+    line-height: 64px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#tvguide #gridpanel div.program.active span {
+    color: #000000;
+    background: #B2D67F;
+}
+
+#tvguide #gridpanel div.program.D30 {
+    width: 250px;
+}
+
+#tvguide #gridpanel div.program.D60 {
+    width: 500px;
+}
+
+#tvguide #gridpanel div.program.D90 {
+    width: 750px;
+}
+
+#tvguide #gridpanel div.program.D120 {
+    width: 1000px;
+}
+
+#tvguide #gridpanel div.program.D150 {
+    width: 1250px;
+}
+
+#tvguide #gridpanel div.program.D180 {
+    width: 1500px;
+}
+
+#tvguide #gridpanel div.program.D210 {
+    width: 1750px;
+}
+
+#tvguide #gridpanel div.program.D240 {
+    width: 2000px;
+}
+
+#tvguide #gridpanel div.program.D270 {
+    width: 2250px;
+}
+
+#tvguide #gridpanel div.program.D300 {
+    width: 2500px;
+}
+
+#tvguide #tvpanel {
+    background: #000000;
+    position: absolute;
+    z-index: 10;
+}
+
+#tvguide #tvpanel.windowmode {
+    width: 328px;
+    height: 185px;
+    left: 841px;
+    top: 25px;
+}
+
+#tvguide #tvpanel.fullscreen {
+    width: 1280px;
+    height: 720px;
+    left: 0px;
+    top: 0px;
+    position: fixed;
+}
+
+#tvguide #tvpanel #channelinfo {
+    /*background: #56a2d6;*/
+    background: #113663;
+    color: white;
+    height: 75px;
+    display: none;
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+#tvguide #tvpanel #channelinfo p {
+    font-size: 32px;
+    font-weight: bold;
+    padding: 25px;
+}

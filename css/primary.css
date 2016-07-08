@@ -1,0 +1,184 @@
+.page.primary {
+}
+
+.page.primary #header {
+	width: 100%;
+	height: 217px;
+	position: absolute;
+	background: url(../images/bk_primary_gradient.png) top left no-repeat;
+}
+
+.page.primary #header #patient {
+	width: 410px;
+	height: 120px;
+	top: 90px;
+	left: 98px;
+	position: absolute;
+	display: inline-block;
+	float: left;
+}
+
+.page.primary #header #patient p {
+	line-height: 26px;
+	text-align: right;
+	color: #F0F4F5;
+	font-size: 22px;
+}
+
+.page.primary #content {
+	width: 100%;
+	height: 557px;
+	top: 217px;
+	position: absolute;
+}
+
+.page.primary #menu {
+	width: 100%;
+	height: 100%;
+}
+
+.page.primary #menu .slides {
+	position: absolute;
+	top: 66px;
+	left: 0px;;
+	width: 1280px;
+	height: 436px;
+}
+
+.page.primary #menu .slides .slide {
+	width: 1280px;
+	height: 436px;
+	display: none;
+}
+
+.page.primary #menu .slides #menu1-slide {
+	background: url('../images/img_main.jpg') top left no-repeat;
+}
+
+.page.primary #menu .slides #menu2-slide {
+	background: url('../images/img_main.jpg') top left no-repeat;
+}
+
+.page.primary #menu .slides #menu3-slide {
+	background: url('../images/img_main.jpg') top left no-repeat;
+}
+
+.page.primary #menu .slides #menu4-slide {
+	background: url('../images/img_main.jpg') top left no-repeat;
+}
+
+.page.primary #menu .slides #menu5-slide {
+	background: url('../images/img_main.jpg') top left no-repeat;
+}
+
+.page.primary #menu .major {
+	background: url('../images/menubar_slice.png') repeat-x;
+	position: absolute;
+	width: 100%;
+	height: 73px;
+	padding: 0;
+}
+
+.page.primary #menu .major a {
+	position: absolute;
+	height: 55px;
+	margin: 0;
+	padding: 17px 0 0 0;
+	text-align: center;
+	font-size: 30px;
+	color: rgba(251,251,251,1.00);
+}
+
+.page.primary #menu .major a.selected {
+	font-size: 30px;
+	/*background: url('../images/menubar_highlight.png') center top no-repeat;*/
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 46px;
+	margin-top: -14px;
+	padding-top: 31px;
+	color: rgba(240,244,245,1.00);
+	background-color: #56a2d6;
+}
+
+.page.primary #menu .major a#menu1 {
+	left: 65px;
+	width: 222px;	
+}
+
+.page.primary #menu .major a#menu2 {
+	left: 255px;
+	width: 225px;
+}
+
+.page.primary #menu .major a#menu3 {
+	left: 465px;
+	width: 230px;
+}
+
+.page.primary #menu .major a#menu4 {
+	left: 675px;
+	width: 280px;
+}
+
+.page.primary #menu .major a#menu5 {
+	left: 940px;
+	width: 275px;
+}
+
+.page.primary #menu .minor {
+	position: absolute;
+	width: 100%;
+	height: 495px;
+	top: 62px;
+}
+
+.page.primary #menu .minor .menu-group {
+	position: absolute;
+	border: 6px solid #56a2d6;
+	background:  rgba(45,41,79,.9);
+	margin: 0;
+	padding-top: 20px;
+	padding-right: 0;
+	padding-left: 0px;
+	padding-bottom: 10px;
+	display: none;
+	text-indent: 10px;
+}
+
+.page.primary #menu .minor #menu1-group {
+	left: 65px;
+	width: 255px;
+}
+
+.page.primary #menu .minor #menu2-group {
+	left: 242px;
+	width: 240px;
+}
+
+.page.primary #menu .minor #menu3-group {
+	left: 440px;
+	width: 295px;
+}
+
+.page.primary #menu .minor #menu4-group {
+	left: 674px;
+	width: 280px;
+}
+
+.page.primary #menu .minor #menu5-group {
+	left: 924px;
+	width: 280px;
+}
+
+.page.primary #menu .minor .menu-group a {
+	display: block;
+	padding: 5px 5px;
+	line-height: 26pt;
+}
+
+.page.primary #menu .minor .menu-group a.active {	
+	background: rgba(107,156,55,1);
+}

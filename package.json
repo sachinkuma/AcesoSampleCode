@@ -1,0 +1,4 @@
+{
+  "name":"UpCare",
+  "version":"2.6.$(COMMIT).$(BUILD)"
+}

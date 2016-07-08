@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MUPDefinition xsi:schemaLocation="http://schemas.dell.com/openmanage/cm/2/0/mupdefinition.xsd mupdefinition.xsd" xmlns="http://schemas.dell.com/openmanage/cm/2/0/mupdefinition.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <packageinformation>
+    <name>Airplane Mode Switch Driver</name>
+    <version>1.4.1</version>
+    <installertype>custom</installertype>
+    <packagegrouping>single_package</packagegrouping>
+    <packagingtype>zip</packagingtype>
+    <releasetype>DRVR</releasetype>
+    <mupspecificationversion>2.4.1</mupspecificationversion>
+    <supportedoperatingsystems>
+      <osidentifier name="Windows8" architecture="x64"></osidentifier>
+      <osidentifier name="Windows8.1" architecture="x64"></osidentifier>
+    </supportedoperatingsystems>
+  </packageinformation>
+  <executable>
+    <executablename>setup.exe</executablename>
+  </executable>
+  <behaviors>
+    <behavior name="attended" />
+    <behavior name="unattended">
+      <vendoroption>
+        <optionvalue requiresvalue="false" switch="/">q</optionvalue>
+      </vendoroption>
+    </behavior>
+    <behavior name="help">
+      <vendoroption>
+        <optionvalue requiresvalue="false" switch="/">h</optionvalue>
+      </vendoroption>
+    </behavior>
+  </behaviors>
+  <parameters>
+    <parametermapping name="force">
+      <vendoroption>
+        <optionvalue switch="/" valuedelimiter="f" requiresvalue="false" />
+      </vendoroption>
+    </parametermapping>
+  </parameters>
+  <returncodes>
+    <returncodemapping name="SUCCESS">
+      <vendorreturncode>1</vendorreturncode>
+      <vendorreturncode>256</vendorreturncode>
+      <vendorreturncode>0</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="ERROR">
+      <vendorreturncode>-2147418112</vendorreturncode>
+      <vendorreturncode>-2147483648</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="REBOOT_REQUIRED">
+      <vendorreturncode>-1073676287</vendorreturncode>
+      <vendorreturncode>1073741826</vendorreturncode>
+    </returncodemapping>
+  </returncodes>
+  <driverarchive>
+    <alldriversroot>.\drivers</alldriversroot>
+  </driverarchive>
+  <inventorymetadata>
+    <extractdriversidentifier>
+      <pnpids>
+        <pnpdevice display="Airplane Mode Switch">
+          <pnpidstring>
+            <ACPIID>DELL</ACPIID>
+            <PnPProductID>ABCE</PnPProductID>
+          </pnpidstring>
+        </pnpdevice>
+      </pnpids>
+    </extractdriversidentifier>
+    <fullpackageidentifier />
+  </inventorymetadata>
+</MUPDefinition>

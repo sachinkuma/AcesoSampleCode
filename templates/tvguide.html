@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/tvguide.css">
+
+    <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+    <script type="text/javascript" src="js/commonJSON.js"></script>
+    <script type="text/javascript" src="js/tvguide.js"></script>
+</head>
+<div id="tvguide-wrapper">
+
+
+    <div id="tvguide" class="fullscreen">
+        <div class="osd-player" id="player">
+            <div id="channel-label">
+                <div id="loadinginfo"><p></p></div>
+                <!-- #loadinginfo -->
+            </div>
+        </div>
+
+		<div class="osd-view" id="channel"></div>
+        <div class="osd-view logo-small topleft"></div>		
+
+        <div class="osd-view" id="mask">
+			<div id="channelinfo"></div>
+            <div id="icon"></div>
+            <p id="masktext">One moment while we are loading television program guide...</p>
+        </div>
+
+        <div class="osd-view" id="gridinfo" style="">
+            <div id="current">
+                <p class="channel"></p>
+
+                <p class="title"></p>
+
+                <p class="time"></p>
+
+                <p class="message">Press MENU for More Features</p>
+
+                <p class="date"></p>
+            </div>
+        </div>
+        <div class="osd-view" id="gridpanel">
+            <div id="header">
+                <div id="today" class="header0"></div>
+                <div class="header1"></div>
+                <div class="header2"></div>
+                <div class="header3"></div>
+                <div class="header4"></div>
+                <a id="prev" href="#"></a>
+                <a id="next" href="#"></a>
+            </div>
+            <div id="content">
+                <div id="program-list">
+                    <ul id="program"></ul>
+                </div>
+                <div id="loading">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

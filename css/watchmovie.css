@@ -1,0 +1,509 @@
+#watchmovie {
+	background: url(../images/bk_hires_1242x768_200_kais-nw_movies.jpg) top center no-repeat;
+}
+
+
+#watchmovie #banner	{
+	width: 500px;
+	height: 118px;
+	top: 62px;
+	left: 675px;
+	padding: 30px 15px;
+	position: absolute;
+}
+
+#watchmovie #banner p	{
+	font-size: 24px;
+	line-height: 30px;
+	margin: 0px 35px 0px 0px;
+	color: #122943;
+	float: right;
+	position: relative;
+	text-align: left;
+}
+
+#watchmovie #banner p span	{
+	font-size: 32px;
+	color: rgba(254,242,0,1.00);
+}
+
+#watchmovie #breadcrumb {
+	width: 340px;
+	height: 60px;
+	margin: 140px 0px 0px 21px;
+	position: absolute;
+}
+
+#watchmovie #breadcrumb p {
+	width: 100%;
+	height: 60px;
+	font-size: 30px;
+	line-height: 60px;
+	color: #ffffff;
+	text-align: center;
+}
+
+#watchmovie #label	{
+	width: 340px;
+	height: 60px;
+	margin: 201px 0px 0px 21px;
+	float: left;
+	position: absolute;
+}
+
+#watchmovie #label p	{
+	width: 100%;
+	width: 100%;
+	height: 60px;
+	font-size: 30px;
+	line-height: 60px;
+	margin: 0px 0px 0px 0px;
+	color: rgba(255,255,255,1.00);
+	float: left;
+	position: relative;
+	text-align: center;
+}
+
+#watchmovie #label img	{
+	margin: 10px 0px 0px 0px;
+	float: right;
+}
+
+
+#watchmovie #title	{
+	width: 548px;
+	min-height: 60px;
+	margin: 240px 0px 0px 75px;
+	font-size: 44px;
+	line-height: 50px;
+	font-weight: 500px;
+
+	float: left;
+	position: absolute;
+}
+
+#watchmovie #duration	{
+	width: 548px;
+	min-height: 60px;
+	margin: 310px 0px 0px 75px;
+	font-size: 44px;
+	line-height: 50px;
+	font-weight: 500px;
+
+	float: left;
+	position: absolute;
+}
+
+#watchmovie #selections	{
+	width: 330px;
+	height: 110px;
+	margin: 609px 0px 0px 26px;
+	float: left;
+	position: absolute;
+}
+
+#watchmovie #selections ul {
+	list-style-type: none;
+}
+
+#watchmovie #selections ul {
+	list-style-type: none;
+}
+
+#watchmovie #selections a	{
+	width: 285px;
+	height: 42px;
+	font-size: 28px;
+	line-height: 42px;
+	padding-left: 45px;
+	margin: 5px 0;
+	float: left;
+	text-align: left;
+	position: relative;
+	color: rgba(255,255,255,1.00);
+	border-radius: 8px; 
+}
+
+
+#watchmovie #selections a.back	{
+	font-size: 28px;
+	padding: 0;
+	margin: 0;
+	width: 200px;
+	text-align: center;
+	position: absolute;
+	bottom: 5px;
+	left: 65px;
+	background-color: #318bc8;
+}
+
+#watchmovie #selections a.active, #watchmovie #selections a:hover	{
+	background: #d36112;
+}
+
+#watchmovie #background	{
+	background-position: 50% 0%; 
+	background-repeat: no-repeat;
+	width: 693px;
+	height: 515px;
+	margin: 205px 0px 0px 587px;
+	float: left;
+	opacity: 1.00;
+	position: absolute;
+}
+
+#watchmovie.about #background	{
+	background-image: url(../images/img_relax_remarkable.jpg); 
+}
+
+#watchmovie #background.textoverlay {
+	opacity: 0.1; 
+}
+
+#watchmovie #selection	{
+	width: 870px;
+	height: 515px;
+	margin: 202px 0px 0px 365px;
+	float: left;
+	display: inline-block;
+	position: absolute;
+	z-index: 1;
+}
+
+#watchmovie #selection #heading	{
+	width: 625px;
+	color: rgba(249,238,132,1.00);
+	font-size: 30px;
+	line-height: 36px;
+	font-weight: 600px;
+	margin: 25px 0px 0px 25px;
+	float: left;
+	text-align: left;
+}
+
+#watchmovie #selection #body	{
+	width: 625px;
+	height: 100%;
+	color: rgba(255,255,255,1.00);
+
+	}
+
+#watchmovie #selection #body #nextpage	{
+	background-color: #ffffff;
+	opacity: 0;
+	position: absolute;
+	z-index: 10;
+	left: 90%;
+	width: 10%;
+	height: 100%;
+	display: inherit;
+	cursor: hand;
+	float: right;
+}
+
+
+
+#watchmovie #selection #body #prevpage	{
+	background-color: #ffffff;
+	opacity: 0;
+	position: absolute;
+	z-index: 10;
+	left: 0;
+	width: 10%;
+	height: 100%;
+	display: inherit;
+	cursor: hand;
+	float: right;
+}
+
+#watchmovie #selection #body #nextpage:hover, #watchmovie #selection #body #prevpage:hover {
+	cursor: pointer;
+	opacity: 0.3;
+	color: blue;
+}
+
+#watchmovie #selection #body p	{
+	width: 750px;
+	min-height: 42px;
+	font-size: 30px;
+	line-height: 42px;
+	font-weight: 600px;
+	float: left;
+	text-align: left;
+	margin: 25px 25px 0px 25px;
+	color: rgba(255,255,255,1.00);
+	display: none;
+
+	
+}
+
+
+#watchmovie #selection #body p.active	{
+	display: inherit;
+}
+	
+#watchmovie #selection #body p span	{
+	color: rgba(255,255,102,1.00);
+}
+
+#watchmovie #selection #body p span.rjust	{
+	float: right;
+	color: rgba(255,255,255,1.00);
+}
+
+#watchmovie #selection #body p.list	{
+	width: 750px;
+	font-size: 30px;
+	line-height: 40px;
+	font-weight: 600px;
+	float: left;
+	text-align: left;
+	margin: 0px 25px 0px 25px;
+	color: rgba(249,238,132,1.00);
+}
+
+#watchmovie #selection #body ul	{
+	width: 625px;
+	font-weight: 600px;
+	float: left;
+	margin: 0px 25px 0px 50px;
+}
+
+#watchmovie #selection #body ul li	{
+	margin-left: 25px;
+	font-size: 30px;
+	line-height: 42px;
+	text-align: left;
+	color: rgba(255,255,255,1.00);
+}
+
+#watchmovie #selection #body ul li span	{
+	color: rgba(249,238,132,1.00);
+}
+
+#watchmovie #selection #body p.clickable	{
+	background: rgba(49,139,200,1.00);
+	width: 300px;
+	min-height: 36px;
+	padding: 10px;
+	font-size: 30px;
+	line-height: 36px;
+	font-weight: 600px;
+	text-align: center;
+	margin: 0px 0px 15px 25px;
+	color: rgba(255,255,255,1.00);
+}
+
+#watchmovie #selection #body p.middle	{
+	margin-top: 200px;
+}
+
+#watchmovie #selection #body p.narrow	{
+	width: 500px;
+	margin-right: 0px;
+}
+
+#watchmovie #selection #body p.wide	{
+	width: 800px;
+	margin-right: 0px;
+}
+
+#watchmovie #selection #body p.small	{
+	font-size: 28px;
+	line-height: 32px;
+}
+
+#watchmovie #selection #body p.smaller	{
+	font-size: 24px;
+	line-height: 28px;
+	font-weight: 600px;
+}
+
+#watchmovie #selection #body p.larger	{
+	font-size: 42px;
+	line-height: 48px;
+}
+
+#watchmovie #selection #body p.nomargin	{
+	margin-top: 0px;
+}
+
+#watchmovie #selection #body ul.topmargin,
+#watchmovie #selection #body p.topmargin	{
+	margin-top: 50px;
+}
+
+#watchmovie #selection #body p.lower	{
+	margin-top: 100px;
+}
+
+#watchmovie #selection #body p.botmargin	{
+	margin-bottom: 25px;
+}
+
+#watchmovie #selection #body p.leftmargin	{
+	margin-left: 50px;
+}
+
+#watchmovie #selection #body p.highlight,
+#watchmovie #selection #body p span.highlight	{
+	color: rgba(255,255,102,1.00);
+}
+
+#watchmovie #selection #body p.lightcolor,
+#watchmovie #selection #body p span.lightcolor	{
+	color: rgba(194,214,181,1.00);
+}
+
+#watchmovie #selection #body p.nocolor,
+#watchmovie #selection #body p span.nocolor	{
+	color: rgba(255,255,255,1.00);
+}
+
+#watchmovie #selection #body p.italic,
+#watchmovie #selection #body p span.italic	{
+	font-style: italic;
+}
+	
+
+#watchmovie #selection #body #pages #carousel	{
+	width: 855px;
+	height: 510px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 20px;
+	float: left;
+	display: inline-block;
+	position: absolute;
+	z-index: 505;
+	text-overflow: ellipsis;	
+}
+
+#watchmovie #selection #body #pages #carousel active {
+	display : inherit;
+}
+
+#watchmovie #selection #body #pages #poster	{
+	background: url(../images/mov_poster_BK2.png) top center no-repeat;
+	width: 250px;
+	height: 340px;
+	margin: 67px 13px 0px -318px;
+	position: absolute;
+	float: left;
+	overflow: hidden;
+}
+
+#watchmovie #selection #body #pages #poster img	{
+	width: 240px;
+	margin: 4px 4px 0px 4px;
+	position: relative;
+	float: left;
+}
+
+#watchmovie #selection #body #pages  #movie	{
+	width: 750px;
+	height: 460px;
+	font-size: 30px;
+	line-height: 50px;
+	font-weight: 800px;
+	color: rgba(255,255,255,1.00);
+	margin: 25px 0px 0px 0px;
+	position: relative;
+	float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;	
+}
+
+#watchmovie #selection #body #pages  #movie p	{
+	width: 650px;
+	height: 50px;
+	font-size: 36px;
+	line-height: 50px;
+	font-weight: 800px;
+	margin: 0px 0px 0px 15px;
+	position: relative;
+	float: left;
+	text-overflow: ellipsis;
+
+}
+
+#watchmovie #selection #body #pages  #movie p.title	{
+	width: 550px;
+	text-overflow: ellipsis;	
+}
+
+#watchmovie #selection #body #pages  #movie p.synopsis	{
+	height: 36px;
+	font-size: 24px;
+	line-height: 36px;
+	margin: 25px 0px 0px 15px;
+	position: relati	ve;
+	float: left;
+	text-overflow: ellipsis;
+}
+
+/* movies.noimages */
+
+#watchmovie.noimages #background {
+	display: none;
+}
+
+#watchmovie.noimages #selection #carousel a img	{
+	display: none;
+}
+
+/* movies.lightdark */
+
+#watchmovie.lightdark {
+	background: url(../images/bk2-dk_movies.jpg) top center no-repeat;
+}
+
+
+/* movies.darklight */
+
+#watchmovie.darklight {
+	background: url(../images/bk3-lt_movies.jpg) top center no-repeat;
+}
+
+#watchmovie.darklight #banner p	{
+	color: rgba(68,85,95,1.00);
+}
+
+#watchmovie.darklight #banner p span	{
+	color: rgba(23,62,89,1.00);
+}
+
+#watchmovie.darklight #label p	{
+	color: rgba(68,85,95,1.00);
+}
+
+#watchmovie.darklight #selections a	{
+	color: rgba(68,85,95,1.00);
+}
+
+#watchmovie.darklight #selections a.active	{
+	background: rgba(254,255,153,1.00);
+}
+
+#watchmovie.darklight #selection #heading,
+#watchmovie.darklight #selection #body,
+#watchmovie.darklight #selection #body p,
+#watchmovie.darklight #selection #body p span,
+#watchmovie.darklight #selection #body ul,
+#watchmovie.darklight #selection #body ul li,
+#watchmovie.darklight #selection #body ul li span	{
+	color: rgba(23,62,89,1.00);
+}
+
+#watchmovie.darklight #selection #title	{
+	background: rgba(254,255,153,1.00);
+	color: rgba(23,62,89,1.00);
+}
+
+#watchmovie.darklight #selection #focus	{
+	border: 8px rgba(254,255,153,1.00) solid;
+	border-top: 20px rgba(254,255,153,1.00) solid;
+}
+
+#watchmovie.darklight #selection #slider #movie	{
+	color: rgba(23,62,89,1.00);
+}

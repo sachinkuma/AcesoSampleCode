@@ -1,0 +1,581 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Aceso UpCare</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="Expires" CONTENT="0">
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">
+    <meta http-equiv="Pragma" CONTENT="no-cache">
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/primary.css"/>
+    <link rel="stylesheet" type="text/css" href="css/global.css"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+
+    <!-- libraries -->
+    <script src="libs/jquery/jquery-1.5.1.min.js"></script>
+    <script src="libs/jquery/jquery.ba-dotimeout.min.js"></script>
+        <script src="libs/iscroll/iscroll.js"></script>
+        <script src="libs/mediaelement/mediaelement-and-player.js"></script>
+        <script src="libs/nebula/nebula.js"></script>
+        <script src="libs/nebula/nebula_tvplayer.js"></script>
+        <script src="libs/nebula/nebula_rtspclient.js"></script>
+        <script src="libs/nebula/nebula_html5player.js"></script>
+        <script src="libs/enseo/enseo_nimbus.js"></script>
+        <script src="libs/enseo/enseo_player.js"></script>
+        <script src="libs/enseo/enseo_tvcontroller.js"></script>
+<!--
+		<script src="libs/procentric/hcap.js"></script>
+    <script src="libs/procentric/procentric.min.js"></script>
+    <script src="libs/rtsp.io/rtsp.io-client-js.min.js"></script>
+-->
+    <!-- core framework -->
+    <script src="core/class.js"></script>
+    <script src="core/view.js"></script>
+    <script src="core/commonJSON.js"></script>
+    <script src="core/analytics.js"></script>
+    <script src="core/datetime.js"></script>
+    <script src="core/getJSON.js"></script>
+    <script src="core/getXML.js"></script>       
+    <script src="core/playvideo.js"></script>
+    <script src="core/power.js"></script>
+    <script src="core/utility.js"></script>
+    <script src="core/debug.js"></script>
+
+    <!-- controller for each page -->
+    <script src="js/allprograms.js"></script>
+    <script src="js/discharged.js"></script>
+    <script src="js/intro.js"></script>
+    <script src="js/intro2.js"></script>
+    <script src="js/feedback.js"></script>
+    <script src="js/languages.js"></script>
+    <script src="js/moviedetail.js"></script>
+    <script src="js/movies.js"></script>
+    <script src="js/myprograms.js"></script>
+    <script src="js/primary.js"></script>
+    <script src="js/programdetail.js"></script>
+    <script src="js/secondary.js"></script>
+    <script src="js/tvguide.js"></script>
+    <script src="js/videoplayer.js"></script>
+    <script src="js/videoplayer2.js"></script>
+    <script src="js/website.js"></script>
+	<script src="js/webbrowser.js"></script>
+
+    <script type="text/javascript">
+
+        jQuery(document).ready(function ($) {
+
+            var config = loadConfigJson();
+            var packageJson = loadPackageJson();
+
+            if (!config) {
+                var $loading = $('#loading').show();
+                $loading.find('#loadinginfo').text('FATAL ERROR: failed to load configuration.');
+                return;
+            }
+
+            if (window['LG']) {
+                var ewf = ewfObject();
+                debug.log('USER AGENT: ' + navigator.userAgent);
+                LG.setDebug(ewf.debug);
+                LG.dbgKeybindings();
+
+                // set some LG settings
+                LG.setProperty("tv_channel_attribute_floating_ui", "0"); // default: 1
+                // LG.setProperty("tv_channel_control", "0"); // default: 2
+
+                debug.status('LG bootstrap...');
+                $.doTimeout('LG bootstrap Timer', 900000, function () {
+                    reloadapp();
+                    return false;
+                });
+                LG.bootstrap(function () {
+                    LG.stopChannel();
+
+                    $.doTimeout('LG bootstrap Timer');
+                    debug.status('LG bootstrap completed successfully.');
+                    $.when(
+                            $.getScript(ewf.proxyServerUrl + '/time')
+                    ).done(function () {
+                                LG.setTime(window.serverTime);
+                            });
+
+                    init();
+
+                }, function () {
+                    $.doTimeout('LG bootstrap Timer');
+                    debug.status('LG bootstrap failed, continue app initialization.');
+                }, function (progress) {
+                    debug.status(progress);
+                });
+            } else {			
+                init();
+            }
+        });
+
+        function init() {
+            debug.status('App initializing...');
+            var ewf = ewfObject();
+
+            try {
+
+                getDevice();    // get basic info like ip, mac, platform...etc
+
+                getUserDataDATA();  // first server call is always get user data
+
+                loadConfigOverride(); // override some config based on TV location
+
+                InitPlatform();  // init platform specific features like handshake
+
+                reportSTBInfo();    // report back info
+
+                nova.tracker.init();
+                nova.tracker.customDimension(1, 'Room Bed', window.settings.homeID, 'visit');
+
+                // preload channels
+                //getChannelsDATA();
+                preloadChannelLineups();
+
+                // default subsequent ajax call timeout to 2 seconds.  Otherwise browser has a much longer timeout.
+                $.ajaxSetup({timeout: 2000});
+
+                if (window.settings.status && window.settings.status != '0') {
+                    // create intro page if user has not accept the term (thus language not set)
+                    if (!window.settings.language || window.settings.language == '') {
+                        var intro = new Intro();
+                        prebookmarkvideos();
+                        intro.render();
+                    }
+                    else {
+                        // create primary page, which will get XML menu in the page
+                        var page = new Primary();
+                        page.render();
+                    }
+                }
+                else {
+                    // discharged room
+                    var page = new Discharged();
+                    page.render();
+                }
+                $('#loading').hide();
+            }
+            catch (e) {
+                var err = 'error - ' + e.message;
+                debug.log(err);
+                debug.status(err);
+
+                if (e.stack)
+                    debug.status(e.stack);
+
+                window.setTimeout('reloadapp()', 900000);   // error, reload in 15min
+            }
+
+            //setInterval( checkforReload, 3540000 );     // 59 minutes PROD
+            $.doTimeout('Global Reload Timer', 3540000, function () {
+                checkforReload();
+                return true;
+            });
+
+            //setInterval( checkDischarge, 120000 );   // check for discharge every 2min
+            $.doTimeout('Global Discharge Timer', 120000, function () {
+                checkDischarge();
+                return true;
+            });
+
+            // moved the second handshake to here so if we are stuck in loading process, platform watchdog will reload us
+            handshakeAPP();
+            $.doTimeout('Global Handshake Timer', 13500, function () {
+                handshakeAPP();
+                return true;
+            });
+
+        }
+
+        function handshakeAPP() {
+            var appString = window.package.name + " " + window.package.version;
+            debug.log('HANDSHAKE ' + appString);
+
+            if (window.settings.version == 'ENSEO') {
+                Nimbus.handshake(appString);
+            }
+            else if (window.settings.version == 'NEBULA') {
+                Nebula.handshake(appString);
+            }
+
+            return;
+        }
+
+        function notificationHandler(event) {
+			
+            if (!event)
+                return;
+            debug.log(JSON.stringify(event));
+            if (event['Category'] == 'browser' && event['Action'] == 'navigate' && event['Message']) {
+                var url = event['Message'];
+                var a = $('<a>', {href: url})[0];
+                var parts = a.hostname.split('.');
+                var domain = parts.slice(-2).join('.');
+                nova.tracker.event('internet', domain, url);
+            }
+        }
+
+        function keyHandler(event) {
+			msg('keyhandler' + event);
+            var version = window.settings.version;
+            msg('[index keyHandler.version]: ' + version);
+            var processed = false;
+            var keyCode = null;
+            if (version == 'ENSEO') {
+                msg('Key stroke received: ' + event.EventMsg + ' status: ' + event.EventType + ' type: ' +  Nimbus.Event.TYPE_COMMAND);
+				msg(event.e);
+                if (event.EventType == Nimbus.Event.TYPE_COMMAND) {
+					var Cmd = Nimbus.parseCommand(event.EventMsg);
+					msg(Cmd);
+					msg('Command received: ' + event.EventMsg + ' Actual Value: ' + Cmd.Code);
+					var processed = keypressed(Cmd.Code);
+                    keyCode = Cmd.Code;
+                }
+                else if (event.EventType == Nimbus.Event.TYPE_NOTIFICATION) {
+                    msg("Notification received, notification= " + event.EventMsg + "");
+                    /*  
+                     if (event.EventMsg=='RTSPAnnouncementWaiting')  {
+                     eofVideo();
+                     }*/
+                    keypressed('notification.' + event.EventMsg);
+                    processed = true;
+                }
+            }
+            else if (version == 'NEBULA') {
+                debug.log('Nebula key received: ' + event.Code + ' modifiers:' + event.Modifiers);
+                processed = keypressed(event.Code, event);
+                keyCode = event.Code;
+            }
+
+            else if (version == 'PROCENTRIC') {
+                debug.log('Procentric key received: ' + event.Code);
+                processed = keypressed(event.Code, event);
+                keyCode = event.Code;
+            }
+
+            else {
+                processed = keypressed(event.Code, event);
+                keyCode = event.Code;
+            }
+			
+            // when powering off, end session in analytics
+            if (keyCode && getkeys(keyCode) == 'POWR') {
+                var ctrl = '', onoff;
+                if (version == 'NOTUSEWASENSEO') { 
+                    var tv = Nimbus.getTVController();
+                    if (tv) {
+                        // we get event before Enseo perform the power action so it's reversed
+                        onoff = tv.getPower() ? 'off' : 'on';
+                        ctrl = tv.getPower() ? 'end' : 'start';
+                    }
+                }
+                else if (version == 'NEBULA') {
+                    onoff = Nebula.getDisplayEnabled() ? 'on' : 'off';
+                    ctrl = Nebula.getDisplayEnabled() ? 'start' : 'end';
+                }
+                else if (version == 'PROCENTRIC') {
+                    onoff = (LG.getPower() == 'normal') ? 'on' : 'off';
+                    ctrl = (LG.getPower() == 'normal') ? 'start' : 'end';
+                }
+						
+                debug.log('device powering ' + onoff + '...');
+                if (onoff) {
+                    nova.tracker.event('device', onoff, '', '', {'sessionControl': ctrl});
+                }
+
+				
+            }
+
+            // special key sequence detection
+            checkCheatCodes(getkeys(keyCode));
+			msg('keypressed ' + processed);
+            return processed;
+        }
+
+        function InitPlatform() {
+            var ewf = ewfObject();
+            var version = window.settings.version;
+
+            if (version == 'ENSEO') {
+                Nimbus.setLogLevel("Nimbus", 2);
+                Nimbus.setLogLevel("Lib", 2);
+                Nimbus.setHandshakeTimeout(120);
+                Nimbus.addEventListener(keyHandler);
+                Nimbus.setTimeZoneMode('Name');
+                Nimbus.setTimeZoneName('PST8PDT', 'America/Los_Angeles');
+                // Enable console and telnet debugging
+                //Nimbus.setConsoleEnabled(true, true);
+                //Nimbus.setTelnetEnabled(true, true);              
+			
+                setVolume(20);
+            }
+            else if (version == 'NEBULA') {
+                Nebula.setHandshakeTimeout(240);
+                Nebula.addCommandHandler(keyHandler);
+
+                if (window.settings.platformVersion > '1.3' || window.settings.platformVersion == '0.0.0.0') {
+                    // close left-over user browsers
+                    Nebula.closeUserBrowser();
+
+                    // send browser navigate history to analytics
+                    Nebula.addNotificationHandler(notificationHandler);
+
+                    // nebula auto update
+                    Nebula.setAutoUpdateEnabled(true, ewf.nebulaUpdateSite);
+                }
+
+
+            }
+            else if (version == 'PROCENTRIC') {
+                RTSPIOClient.init({
+                    ip: window.settings.ip,
+                    proxyServerUrl: ewf.proxyServerUrl
+                });
+
+            }
+            else if (version == 'TEST') {
+                $('body').addClass('test');
+              //  RTSPIOClient.init({
+               //     ip: ewf.browser.ip,
+                //    proxyServerUrl: ewf.proxyServerUrl
+                //});
+            }
+
+            // wire up generic browser keyboard events
+            $(document).keydown(function (e) {
+                debug.log('Browser keydown received: ' + e.keyCode);
+                e['Code'] = e['keyCode'];
+                if (version === 'ENSEO') {
+                    debug.log('Platform is ENSEO, ignored');                    
+                }
+                var handled = keyHandler(e);
+                if (handled) {
+                    event.preventDefault();
+                    return false;
+                }
+                return true;
+            });
+
+			if(version == 'ENSEO') {
+				$(document).keydown(function(e){
+					msg('init ' + e.keyCode);					
+					keypressed(e.keyCode);										
+					return false;
+				});	
+			}
+            handshakeAPP();
+
+            //debug.log('Platform "' + version + ' ' + window.settings.platformVersion + '" initialized');
+        }
+
+        window.cheats = window.cheats || {};
+        window.cheats.reload = ['UP', '2', '5', '8', '0'];
+        function checkCheatCodes(key) {
+            if (isCheat(key, window.cheats.reload)) {
+                reloadapp(false);
+            }
+        }
+
+        function isCheat(key, cheatKeys) {
+            var idx = cheatKeys.match || 0;
+            var result = false;
+
+            if (!cheatKeys || !cheatKeys.length || !key)
+                return false;
+
+            if (idx < 0 || idx >= cheatKeys.length) {
+                idx = 0;
+                result = false;
+            }
+            else if (cheatKeys[idx] === key) {
+                idx++;   // hit, increase match index
+
+                if (idx >= cheatKeys.length) {    // bingo, all hit
+                    debug.log('^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ');
+                    debug.log('^-^ cheat code detected - "' + cheatKeys.toString() + '" ^-^');
+                    debug.log('^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ^-^ ');
+                    idx = 0;
+                    result = true;
+                }
+                else {
+                    result = false;
+                }
+            }
+            else {
+                idx = 0; // missed, reset index
+                result = false;
+            }
+
+            cheatKeys.match = idx;
+            return result;
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+<div id="loading">
+    <div id="loadinginfo"><p>Loading...</p></div>
+    <ul id="status"></ul>
+    <!-- #loadinginfo -->
+</div>
+
+<!-- #loading overlay -->
+<div id="nightmode-overlay" class="fullscreen">
+</div>
+
+<div id="kontrol">
+    <!-- version control -->
+    <div id="K_version"></div>
+    <!-- PROD, TEST -->
+    <div id="K_client"></div>
+    <!-- ACESO, SWEDISH -->
+    <div id="K_mac"></div>
+    <div id="K_ip"></div>       
+    <!-- primary submenu cookies -->
+    <div id="K_submenu"></div>
+    <div id="K_submenufirst"></div>
+    <div id="K_panel"></div>
+    <div id="K_subpanel"></div>
+    <div id="K_intro"></div>
+    <div id="K_portal"></div>
+    <div id="K_primaryload">1</div>
+    <div id="K_myprogramsload">1</div>
+    <div id="K_allprogramsload">1</div>
+    <div id="K_secondaryload">1</div>
+    <div id="K_images"></div>
+    <div id="K_contrast"></div>
+    <div id="K_audio"></div>
+
+</div>
+<!-- #kontrol -->
+
+<div id="json">
+    <!-- current objects -->
+    <div id="CALL_current"></div>
+    <div id="EWF_current"></div>
+    <!-- CALL objects -->
+    <div id="CALL_userdata"></div>
+    <div id="CALL_homestatus"></div>
+    <div id="CALL_productoffering"></div>
+    <div id="CALL_myprograms"></div>
+    <div id="CALL_allprograms"></div>
+    <div id="CALL_program"></div>
+    <div id="CALL_moviecategory"></div>
+    <div id="CALL_movies"></div>
+    <div id="CALL_asset"></div>
+    <div id="CALL_purchase"></div>
+    <div id="CALL_position"></div>
+    <div id="CALL_serverload"></div>
+    <div id="CALL_channelgroup"></div>
+    <!-- CALL objects -->
+    <div id="EWF_userdata"></div>
+    <div id="EWF_homestatus"></div>
+    <div id="EWF_productoffering"></div>
+    <div id="EWF_myprograms"></div>
+    <div id="EWF_allprograms"></div>
+    <div id="EWF_program"></div>
+    <div id="EWF_moviecategory"></div>
+    <div id="EWF_movies"></div>
+    <div id="EWF_asset"></div>
+    <div id="EWF_purchase"></div>
+    <div id="EWF_position"></div>
+    <div id="EWF_serverload"></div>
+    <div id="EWF_channelgroup"></div>
+    <!-- JSON objects -->
+    <div id="JSON_patient"></div>
+    <div id="JSON_device"></div>
+    <div id="JSON_homestatus"></div>
+    <div id="JSON_productoffering"></div>
+    <div id="JSON_recovery"></div>
+    <div id="JSON_bookmarks"></div>
+    <div id="JSON_myprograms"></div>
+    <div id="JSON_allprograms"></div>
+    <div id="JSON_recovery"></div>
+    <div id="JSON_program"></div>
+    <div id="JSON_moviecategory"></div>
+    <div id="JSON_movies"></div>
+    <div id="JSON_sceniccategory"></div>
+    <div id="JSON_scenic"></div>
+    <div id="JSON_asset"></div>
+    <div id="JSON_serverload"></div>
+    <div id="JSON_channels"></div>
+    <div id="JSON_channellineup"></div>
+    <div id="MOVIEDATA"></div>
+    <div id="SCENICDATA"></div>
+    <!-- VIDEO objects -->
+    <div id="VIDEO_player"></div>
+    <div id="VIDEO_nowplaying"></div>
+    <!-- EPG objects -->
+    <div id="EPG_channels"></div>
+    <div id="EPG_watchtv"></div>
+    <div id="EPG_musicradio"></div>
+    <div id="EPG_today"></div>
+    <div id="EPG_channel"></div>
+    <div id="EPG_time"></div>
+    <div id="EPG_program"></div>
+    <div id="EPG_PGMDATA"></div>
+    <!-- UNUSED objects -->
+    <div id="CALL_bookmarks"></div>
+    <div id="EWF_bookmarks"></div>
+    <div id="JSON_selections"></div>
+    <div id="CALL_programs"></div>
+    <div id="EWF_programs"></div>
+    <div id="JSON_programs"></div>
+    <div id="JSON_bookmark"></div>
+    <div id="JSON_purchase"></div>
+    <div id="JSON_position"></div>
+    <div id="CALL_ticket"></div>
+    <div id="EWF_ticket"></div>
+    <div id="JSON_ticket"></div>
+    <div id="CALL_serverload"></div>
+</div>
+<!-- #json objects -->
+
+<div id="xml">
+    <!-- dine XML call data -->
+    <div id="XMLCALL_lastcall"></div>
+    <div id="XMLCALL_laststring"></div>
+    <div id="XMLCALL_error"></div>
+    <!-- dine XML arguments -->
+    <div id="XMLCALL_patroninfo"></div>
+    <div id="XMLCALL_patronmenu"></div>
+    <div id="XMLCALL_submitorder"></div>
+    <div id="XMLCALL_unlockmenu"></div>
+
+    <div id="XML_configs"></div>
+    <div id="X_JSON_configs"></div>
+
+    <div id="XML_menu"></div>
+    <div id="X_JSON_menu"></div>
+    <div id="X_JSON_selections"></div>
+    <div id="X_JSON_choices"></div>
+
+</div>
+<!-- #xml objects -->
+
+<div id="preload">
+
+    <img src="images/bk_default-movies.jpg" width="1" height="1"/>
+    <img src="images/bk_home.jpg" width="1" height="1"/>
+    <img src="images/bk_intro.jpg" width="1" height="1"/>
+    <img src="images/bk_default2.jpg" width="1" height="1"/>
+    <img src="images/bk_default.jpg" width="1" height="1"/>	
+	<img src="images/bk_hires_1366x768_200_KAISER-WESTSIDE_discharge.jpg" width="1" height="1"/>
+	
+	<img src="images/bk_home.jpg" width="1" height="1"/>	
+	
+	
+ 
+</div>
+<!-- #preload -->
+</body>
+</html>

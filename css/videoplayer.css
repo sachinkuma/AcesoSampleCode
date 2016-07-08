@@ -1,0 +1,76 @@
+#videoplayer {
+    background: #000000;
+	width: 1280px;
+	height: 720px;
+}
+
+#videoplayer #buttons {
+    position: relative;
+    float: left;
+}
+
+#videoplayer #buttons a {
+	height: 70px;
+	font-size: 30px;
+	line-height: 70px;
+	margin: 0 10px;
+	padding: 0 20px;
+	text-align: center;
+	position: relative;
+	display: block;
+	float: left;
+	color: rgba(255,255,255,1.00);
+	background-color: #318bc8;
+	border-radius: 8px; 
+}
+
+#videoplayer #buttons a#stop {
+    
+}
+	
+#videoplayer #videopanel {
+	background: #000000;
+	position: absolute;
+	z-index: 10000;
+}
+
+#videoplayer #videopanel.windowmode {
+	width: 1280px;
+	height: 720px;
+}
+
+#videoplayer #videopanel.fullscreen {
+	width: 1280px;
+	height: 720px;
+	left: 0px;
+	top: 0px;
+	position:fixed;
+}
+
+#videoplayer #exitfullscreen {
+	background: #000000 url(../images/exit_full_screen.png) top left no-repeat;
+	display: none;
+	position: absolute;
+	z-index: 11;
+	width: 80px;
+	height: 80px;
+	right: 0;
+	bottom: 0;
+	opacity: 0.3;
+	cursor: pointer;
+}
+
+#videoplayer #popup {
+	display: none;
+	position: absolute;
+	width: 566px;
+	left: 400px;
+	top: 268px;
+	z-index: 20;
+	padding: 10px 20px;
+	text-align: center;
+	font-size: 26px;
+	color: #FFF;
+	background: #265C88;
+	border-radius: 8px;
+}

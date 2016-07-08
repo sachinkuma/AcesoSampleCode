@@ -1,0 +1,540 @@
+
+.page.movies {
+	width: 1280px;
+	height: 720px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background: url(../images/bk_default-movies.jpg) top left no-repeat;
+}
+
+.page.movies .background {
+	width: 1280px;
+	height: 720px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background: url(../images/bk_default2.jpg) top left no-repeat;
+	z-index: 1;
+
+}
+.page.movies .page-title {
+	left: 66px;
+	top: 100px;
+	width: 328px;
+	height: 66px;
+	z-index: 1;
+	text-align: center;
+	letter-spacing: 1px;
+	color: #F0F4F5;
+	line-height: 72px;
+	background-size: cover;
+	background-color: #0078ad;
+	border-top-left-radius: 26px 26px;
+	border-top-right-radius: 26px 26px;
+	font-weight: bold;
+}
+
+.page.movies #header {
+	width: 100%;
+	height: 145px;
+	position: absolute;
+	background: url(../images/bk_secondary_gradient.png) top left no-repeat;
+}
+
+.page.movies #header #heading1 {
+	height: 100px;
+	top: 75px;
+	left: 436px;
+	position: absolute;
+	display: inline-block;
+	float: left;
+}
+
+.page.movies #header #heading1 p {
+	color: #45466D;
+}
+
+.page.movies #header #heading1 img {	
+	width: 205px;
+	height: 275px;
+}
+
+.page.movies #header #heading2 {
+	width: 330px;
+	height: 56px;
+	top: 162px;
+	left: 60px;
+	position: absolute;
+	float: left;
+	z-index: 1;
+	border: 4px solid rgba(240,244,245,1.00);
+	background-color: #94b329;
+	box-shadow: 1px 4px 8px 0px #353535;
+	border-radius: 12px;
+}
+
+.page.movies #header #heading2 p {
+	color: #F0F4F5;
+	text-align: center;
+	font-size: 28px;
+	padding-top: 14px;
+	font-weight: 600;
+}
+
+.page.movies #content {
+	width: 100%;
+	height: 575px;
+	top: 145px;
+	position: absolute;
+	left: 0px;
+	background: url(../images/bk_default2.jpg) top left no-repeat;
+}
+
+.page.movies #menu {
+	width: 100%;
+	height: 100%;
+}
+
+.page.movies #menu .major {
+	position: absolute;
+	width: 330px;
+	height: 426px;
+	left: 66px;
+	top: 76px;
+	padding: 35px 0 0 0;
+	/*background: #333230;*/
+	box-shadow: 2px 2px 6px 0px #0C1E32;
+	background-color: rgba(31,87,112, 1.0);
+	border-bottom-right-radius: 20px 20px;
+	border-bottom-left-radius: 20px 20px;	
+}
+
+.page.movies #menu .major a {
+	position: relative;
+	display: block;
+	height: 30px;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-left: 15px;
+	padding-bottom: 5px;
+	text-align: left;
+	font-size: 28px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	border-radius: 8px;
+	background-color: rgba(48,138,200,1.00);
+}
+
+.page.secondary #menu .major a.back-button {
+	/*  position: absolute;
+	width: 292px;*/
+	font-size: 26px;
+	top: 0px;
+	text-align: left;
+	margin-bottom: 20px;
+	background-color: rgba(48,138,200,0.70);
+	border-radius: 8px;
+}
+
+.page.movies #menu .major a.selected {
+	background: #d36012;
+	border-radius: 8px;
+}
+
+.page.movies #menu .minor {
+	position: absolute;
+	width: 840px;
+	height: 588px;
+	top: 0px;
+	left: 440px;
+}
+
+.page.movies #menu .minor .arrow-button {
+	display: block;
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	top: 500px;
+	border-radius: 30px;
+	margin: 0;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.page.movies #menu .minor .arrow-button.sub-page-prev {	
+	left: -20px;
+}
+
+.page.movies #menu .minor .arrow-button.sub-page-next {
+	right: 30px;
+}
+
+.page.movies #menu .minor .arrow-button:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.page.movies #menu .minor .arrow-left {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	margin: -20px 0 0 -15px;
+}
+
+.page.movies #menu .minor .arrow-right {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	margin: -20px 0 0 -5px;
+}
+
+.page.movies #menu .minor .menu-tab {
+	position: absolute;
+	display: none;
+	width: 800px;
+}
+
+.page.movies #menu .minor .sub-page {
+	display: none;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.page.movies #menu .minor .sub-header {
+	margin-top: 20px;
+	height: 50px;
+	color: #FFFF92;
+}
+
+.page.movies #menu .minor .sub-footer {
+	position: absolute;
+	height: 50px;
+	color: #C0DDA3;
+	text-align: center;
+	top: 35px;
+	left: 450px;
+	text-shadow: 2px 2px 6px #000000;
+}
+
+.page.movies #menu .minor .sub-content {
+    margin-top: -20px;
+	height: 470px;
+    overflow: hidden;
+    position: relative;
+}
+
+.page.movies #menu .minor .sub-content p {
+	margin-bottom: 15px;
+	line-height: 28pt;
+}
+
+.page.movies #menu .minor .sub-content .sub-image1 img
+,.page.movies #menu .minor .sub-content .sub-image2 img {
+	width: 100%;
+	height: 100%;
+
+}
+
+/* Layout 1, text only */
+.page.movies #menu .minor .sub-content.layout1 {
+	
+}
+
+.page.movies #menu .minor .sub-content.layout1 .sub-text1{
+	display: inline-block;
+	width: 100%;
+	padding-top: 40px;
+}
+
+
+img.rightarrow	{
+	height: 50px;
+	width: 50px;
+	margin: 420px 0px 0px 340px;
+	position: absolute;
+}
+
+img.leftarrow	{
+	height: 50px;
+	width: 50px;
+	margin: 420px 0px 0px -450px;
+	position: absolute;
+}
+
+
+
+/* movies.noimages */
+
+#movies.noimages #background {
+	display: none;
+}
+
+#movies.noimages #selection #carousel a img	{
+	display: none;
+}
+
+
+.page.movies #menu .minor .sub-content.layout1 .sub-text2{
+	display: inline-block;
+	width: 100%;
+	padding-top: 10px;
+}
+
+.page.movies #menu .minor .sub-content.layout1 .sub-image1{
+	display: none;
+}
+
+.page.movies #menu .minor .sub-content.layout1 .sub-image2{
+	display: none;
+}
+
+/* Layout 2, text and image side by side */
+.page.movies #menu .minor .sub-content.layout2 {
+	
+}
+
+.page.movies #menu .minor .sub-content.layout2 .sub-text1{
+	display: inline-block;
+	float: left;
+	width: 520px;
+	padding-top: 40px;
+}
+
+.page.movies #menu .minor .sub-content.layout2 .sub-text2{
+	display: none;
+}
+
+.page.movies #menu .minor .sub-content.layout2 .sub-image1{
+	display: inline-block;
+	float: left;
+	width: 246px;
+	padding-top: 50px;
+	padding-left: 10px;
+}
+
+.page.movies #menu .minor .sub-content.layout2 .sub-image2{
+	display: none;
+}
+
+/* Layout 3, text and image aligns vertically */
+.page.movies #menu .minor .sub-content.layout3 {
+	
+}
+
+.page.movies #menu .minor .sub-content.layout3 .sub-text1{
+	float: none;
+	height: 210px;
+	width: 720px;
+	padding-top: 40px;
+}
+
+.page.movies #menu .minor .sub-content.layout3 .sub-text2{
+	display: none;
+}
+
+.page.movies #menu .minor .sub-content.layout3 .sub-image1{
+	float: none;
+	height: 220px;
+}
+
+.page.movies #menu .minor .sub-content.layout3 .sub-image2{
+	display: none;
+}
+
+/* Layout 4, text 1 on top, text 2 and image at bottom */
+.page.movies #menu .minor .sub-content.layout4 {
+	
+}
+
+.page.movies #menu .minor .sub-content.layout4 .sub-text1{
+	display: block;
+	float: none;
+	height: 220px;
+	padding-top: 40px;
+}
+
+.page.movies #menu .minor .sub-content.layout4 .sub-text2{
+	float: left;
+	width: 500px;
+	height: 200px;
+}
+
+.page.movies #menu .minor .sub-content.layout4 .sub-image1{
+	float: left;
+	width: 240px;
+	height: 200px;
+}
+
+.page.movies #menu .minor .sub-content.layout4 .sub-image2{
+	display: none;
+}
+
+/* Layout 5, text overlays image */
+.page.movies #menu .minor .sub-content.layout5 {
+	
+}
+
+.page.movies #menu .minor .sub-content.layout5 .sub-text1{
+	display: block;
+	position: absolute;
+	height: 225px;
+	width: 760px;
+	top: 50px;
+	left: 10px;
+	padding: 15px;
+	z-index: 1;
+	background: rgba(0,0,0,0);
+}
+
+.page.movies #menu .minor .sub-content.layout5 .sub-text2{
+	display: none;
+}
+
+.page.movies #menu .minor .sub-content.layout5 .sub-image1{
+	width: 100%;
+	height: 100%;
+}
+
+.page.movies #menu .minor .sub-content.layout5 .sub-image2{
+	display: none;
+}
+
+
+/* Layout 6, ONLY an image (map) */
+.page.movies #menu .minor .sub-content.layout6 {
+	
+}
+
+.page.movies #menu .minor .sub-content.layout6 .sub-text1{
+	display: none;
+}
+
+.page.movies #menu .minor .sub-content.layout6 .sub-text2{
+	display: none;
+}
+
+.page.movies #menu .minor .sub-content.layout6 .sub-image1{
+	width: 100%;
+	height: 100%;
+}
+
+.page.movies #menu .minor .sub-content.layout6 .sub-image2{
+	display: none;
+}
+
+
+
+/* carousel */
+
+
+
+.carousel {
+
+	height: 467px;
+	width: 845px;
+	margin-left: -35px;
+	margin-top: -40px;
+	position: absolute;
+	display: inline-block;
+
+}
+
+
+.carousel .carouselTitle {
+	background-color: #C8611C;
+	height: 65px;
+	width: 845px;
+	position: absolute;
+	z-index: 5;
+	display: block;
+}
+
+.carousel .carouselTitle p {
+	width: 100%;
+	margin: 10px 0px 0px 0px;
+	font-weight: bold;
+	font-size: 36px;
+	color: white;
+	text-align: center;
+}
+
+.carousel .carouselOverlay {
+	border: 25px solid #C8611C;
+	height: 345px;
+	width: 245px;
+	margin: 0px 0px 0px 30px;	
+	display: none;
+	position: absolute;
+	z-index: 5;
+}
+
+.carousel .carouselPosters {
+	height: 400px;
+	width: 845px;
+	margin: 45px 0px 0px 0px;
+	position: absolute;
+	z-index: 4;
+	overflow: scroll;    
+	overflow-x: hidden;
+
+}
+
+.carousel .carouselPosters img {  	
+	width: 33%;
+	height: 1px;
+	width: 1px;
+	margin: 75px 0px 0px 0px;
+	padding: 0px;
+	float: left;
+	position: relative;
+	display: none;	
+	padding: 25px, 25px, 25px, 25px; 
+
+}
+
+.carousel .carouselPosters img.active { 
+	background: #C8611C;
+	height: 300px; 
+	width: 210px; 	
+	margin: 0px 0px 0px 0px; 
+	display: block; 
+	padding: 50px 30px 30px 30px;
+}
+
+.carousel .carouselPosters img.inactive{ 
+	background: url(../images/mov_poster_BK1.png) top center no-repeat; 	
+	height: 300px; 
+	width: 210px; 	
+	margin: 35px 15px 15px 15px; 
+	display: block; 
+	padding: 15px 15px 1px 15px;
+}
+
+
+.carousel .carouselPosters img.blank { 
+	background: url(../images/mov_poster_BK0.png) top center no-repeat;
+}
+
+.carousel .carouselMessage {
+	height: 40px;
+	width: 800px;
+	margin: 420px 0px 0px 0px;
+	display: block;
+}
+
+.carousel .carouselMessage p {
+	width: 100%;
+	margin: 0px auto 0px auto;
+	font-weight: normal;
+	font-size: 30px;
+	color: white;
+	text-align: center;
+}

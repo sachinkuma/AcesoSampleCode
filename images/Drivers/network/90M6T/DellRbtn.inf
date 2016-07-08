@@ -1,0 +1,127 @@
+; DELL RBTN driver.
+;
+; Built 31 July 2012, OSR Open Systems Resources, Inc.
+
+
+[Version]
+Signature="$Windows NT$"
+Class=HIDClass
+ClassGuid={745a17a0-74d3-11d0-b6fe-00a0c90f57da}
+Provider=%VENDOR%
+;LayoutFile=layout.inf
+DriverVer=06/26/2013, 1.4.1
+CatalogFile=DellRbtn.cat
+
+[SourceDisksFiles]
+DellRbtn.sys = 99
+
+[SourceDisksNames.x86]
+99 = %DISK_NAME%,,,
+
+[SourceDisksNames.AMD64]
+99 = %DISK_NAME%,,,
+
+[DestinationDirs]
+CopySystemSysFiles = 12      
+CopyFunctionDriver = 12      
+CopyFilterDriver = 12      
+CopyFilesDLL = 11 
+
+[Manufacturer]
+%VENDOR%=Vendor, NTAMD64, NTx86
+
+[Vendor.NTAMD64]
+%DellRbtn%    = DellRbtn.Inst.win8, ACPI\DELRBTN
+%DellRbtn%    = DellRbtn.Inst.win8, ACPI\DELLABCE
+%customCollection%    = customCollection.Inst, HID\VEN_DELL&DEV_ABCE
+
+[Vendor.NTX86]
+%DellRbtn%    = DellRbtn.Inst.win8, ACPI\DELRBTN
+%DellRbtn%    = DellRbtn.Inst.win8, ACPI\DELLABCE
+%customCollection%    = customCollection.Inst, HID\VEN_DELL&DEV_ABCE
+
+;===============================================================
+;   DellRbtn for win8
+;   Instead of using hidkmdf.sys as a filter, use the inbox 
+;   mshidkmdf.sys as a mapper filter
+;===============================================================
+[DellRbtn.Inst.win8.NT]
+; Just copy the driver. No neeed to copy other system binaries.
+CopyFiles = CopyFunctionDriver
+
+[DellRbtn.Inst.win8.NT.HW]
+AddReg = DellRbtn_win8_Parameters.AddReg 
+
+;
+; hidkmdf is the function driver and DellRbtn is the lower filter
+;
+[DellRbtn.Inst.win8.NT.Services]
+AddService = DellRbtn,0x00000002, DellRbtn_Service_Inst
+
+[DellRbtn_win8_Parameters.AddReg]
+HKR,,"UpperFilters",0x00010000,"mshidkmdf"
+
+;===============================================================
+;   Sections common to all OS versions
+;===============================================================
+
+[CopySystemSysFiles]
+HidClass.sys,,,0x00000010    ;COPYFLG_NO_OVERWRITE (for win2k)
+HidParse.sys,,,0x00000010    ;COPYFLG_NO_OVERWRITE (for win2k)
+
+[CopyFunctionDriver]
+DellRbtn.sys
+
+[CopyFilesDLL]
+Hid.dll,,,0x00000010    ;COPYFLG_NO_OVERWRITE (for win2k)
+
+[DellRbtn_Service_Inst]
+DisplayName    = %DellRbtn%
+ServiceType    = %SERVICE_KERNEL_DRIVER% 
+StartType      = %SERVICE_DEMAND_START% 
+ErrorControl   = %SERVICE_ERROR_IGNORE% 
+ServiceBinary  = %12%\DellRbtn.sys 
+
+;===============================================================
+;   Custom Collection install section
+; - Only a Null service is installed.
+;===============================================================
+[customCollection.Inst.NT]
+; NULL section
+
+[customCollection.Inst.NT.HW]
+AddReg = customCollection.Inst.AddReg.NT.HW
+
+[customCollection.Inst.AddReg.NT.HW]
+HKR,,"SelectiveSuspendEnabled",0x00000001,0x1
+
+[customCollection.Inst.NT.Services]
+AddService = ,0x00000002,   ; NULL Service
+
+[Strings] 
+;  *******Localizable Strings******* 
+VENDOR         = "Dell Inc" 
+DellRbtn = "Airplane Mode Switch"
+customCollection = "Airplane Mode Switch Collection"
+DISK_NAME      = "Airplane Mode Switch Install Disk"
+
+;  *******Non Localizable Strings******* 
+
+SERVICE_BOOT_START     = 0x0 
+SERVICE_SYSTEM_START   = 0x1 
+SERVICE_AUTO_START     = 0x2 
+SERVICE_DEMAND_START   = 0x3 
+SERVICE_DISABLED       = 0x4 
+
+SERVICE_KERNEL_DRIVER  = 0x1 
+SERVICE_ERROR_IGNORE   = 0x0 
+SERVICE_ERROR_NORMAL   = 0x1 
+SERVICE_ERROR_SEVERE   = 0x2 
+SERVICE_ERROR_CRITICAL = 0x3 
+
+REG_EXPAND_SZ          = 0x00020000 
+REG_DWORD              = 0x00010001 
+REG_MULTI_SZ           = 0x00010000
+REG_BINARY             = 0x00000001
+REG_SZ                 = 0x00000000
+

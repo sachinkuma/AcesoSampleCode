@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/watchvideo.css">
+
+		<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+		<script type="text/javascript" src="js/commonJSON.js"></script>
+		<script type="text/javascript" src="js/watchvideo.js"></script>
+		
+		<script type="text/javascript">
+			// These script will only be executed if load this html directly in browser.
+			// If this page is loaded by Ajax, only #watchvideo element will be loaded into DOM, no script execution.
+			jQuery(document).ready(function($){	
+				
+				// you can change this string and open this HTML directly in browser to test
+				var datastring = '{ "tag": "mission", "label": "Our Mission", "type": "menu"'
+					+ ', "attributes": {'
+						+ '"attribute":['
+							+ '{"text":"Remarkable recoveries happen every day at Spaulding.","class":"title1"}'
+							+ ', {"text":"Find your strength.","class":"title2"}'
+							+ ', {"image":"icon_home_about.png","class":"image"}'
+					+ '] }' 
+					+ ', "mission": ['
+						+ ' { "tag": "research", "label": "Research", "type": "pagelist", "attributes": { "attribute": [ {"class":"text4","text":"<span>Use your Right Arrow Key for More &gt;</span><br>As teaching hospital of Harvard Medical School, research and innovation are at the heart of our mission. With novel research approaches and ground breaking technology, our researchers, physicians and clinicians conduct a range of studies to improve the lives of the communities we serve and expand the clinical knowledge base."}, {"class":"text4","text":"<span>Use your &lt; Left Arrow Key to go back.</span><br>Spaulding is one of just two national providers to have been designated as Model System sites by the National Institute on Disability and Rehabilitation Research in three specialties at the same time - Spinal Cord Injury, Traumatic Brain Injury and Burn Injury Rehabilitation.<br>To learn more about our research studies, please ask your <span>case manager."}] } }'
+						+ ', { "tag": "teaching", "label": "Teaching", "type": "page", "attributes": { "attribute": [ {"class":"text4","text":"<span>We serve as a teaching hospital of Harvard Medical School and the home of its Department of Physical Medicine and Rehabilitation.</span> Spaulding also collaborates with the MGH Institute for Health Professions as well as area colleges and universities to train physicians, nurses, therapists and other professionals the latest practices and advances in rehabilitation."}] } }'
+						+ ', { "tag": "advocacy", "label": "Advocacy", "type": "page", "attributes": { "attribute": [ {"class":"text4","text":"<span>Advocating for the communities we serve and advancing the cause of equal opportunities for all people is core to Spaulding\'s mission.</span> We work closely with our community partners and agencies at all levels of government to foster inclusion of people with disabilities and improve access."}] } }' 
+					+ '] }';
+				
+				var page = new watchvideo('standalone-wrapper', 'about'
+					, function(){
+						// hide something
+					}, function(){
+						// show something
+					}, false, false, true);
+					
+				page.render(JSON.parse(datastring));
+				
+				// set a default keypress event
+				$(document).keydown(function(e){
+					keypressed(e.keyCode);
+					return false;
+				});				
+			});
+					
+		</script>
+	</head>	
+	<div id="standalone-wrapper">
+		<div id="watchvideo" style="display:none;">
+			<div id="banner">
+			</div><!-- #banner -->
+			<div id="label">
+				<img id="labelicon" />
+			</div><!-- #label -->
+			<div id="title">
+			</div><!-- #title -->
+			<div id="duration">
+			</div><!-- #duration -->
+
+			<div id="selections">
+			</div><!-- #selections -->
+			<div id="background">
+				
+			</div><!-- #background -->
+			<div id="selection">
+				<div id="body">
+				</div>
+			</div><!-- #selection -->
+		</div>
+	</div>
+</html>

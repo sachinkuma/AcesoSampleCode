@@ -1,0 +1,46 @@
+#discharged {
+	background: url('../images/bk_hires_1366x768_200_KAISER-WESTSIDE_discharge.jpg') top left no-repeat;
+	background-size:     cover;  
+	overflow: hidden;
+	color: white;
+	font-size: 22px;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;				
+	z-index: 10;
+}
+
+#discharged #content {
+	position: absolute;
+	left: 289px;
+	top: 225px;
+	width: 692px;
+	height: 287px;
+	padding: 25px;
+	text-align: center;
+}
+
+#discharged #content p {
+    font-size: 30px;
+	line-height: 48px;
+	text-shadow: 1px 1px 5px #000;
+}
+
+#discharged #datetime {
+	position: absolute;
+	top: 25px;
+	right: 55px;
+	font-size: 24px;
+	text-shadow: 1px 1px 5px #000;
+}
+
+#discharged #revision {
+	position: absolute;
+	left: 20px;
+	bottom: 10px;
+	top: 670px;
+	font-size: 12px;
+	color: #ffffff;
+	z-index: 9;
+}
+

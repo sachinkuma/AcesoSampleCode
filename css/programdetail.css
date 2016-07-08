@@ -1,0 +1,479 @@
+.page.programdetail {
+	width: 1280px;
+	height: 720px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #000000;
+	background: url(../images/bk_default2.jpg) top left no-repeat;
+}
+.page.programdetail .background {
+	width: 1280px;
+	height: 720px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background: url(../images/bk_default2.jpg) top left no-repeat;
+	z-index: 1;
+}
+.page.programdetail .page-title {
+	left: 66px;
+	top: 100px;
+	width: 544px;
+	height: 66px;
+	z-index: 1;
+	text-align: center;
+	letter-spacing: 1px;
+	color: #F0F4F5;
+	line-height: 72px;
+	background-size: cover;
+	background-color: #0078ad;
+	border-top-left-radius: 26px 26px;
+	border-top-right-radius: 26px 26px;
+	font-weight: bold;
+}
+
+.page.programdetail #header {
+	width: 100%;
+	height: 145px;
+	position: absolute;
+	background: url(../images/bk_secondary_gradient.png) top left no-repeat;
+}
+
+.page.programdetail #header #heading1 {
+	height: 100px;
+	top: 341px;
+	left: 109px;
+	position: absolute;
+	display: inline-block;
+	float: left;
+	width: 456px;
+	z-index: 2;
+}
+
+.page.programdetail #header #heading1 p {
+	color: #FFFFFF;
+}
+
+.page.programdetail #header #heading2 {
+	width: 546px;
+	height: 56px;
+	top: 162px;
+	left: 60px;
+	position: absolute;
+	float: left;
+	z-index: 1;
+	border: 4px solid rgba(240,244,245,1.00);
+	background-color: #94b329;
+	box-shadow: 1px 4px 8px 0px #353535;
+	border-radius: 12px;
+}	
+
+.page.programdetail #header #heading2 p {
+	color: #F0F4F5;
+	text-align: center;
+	font-size: 28px;
+	padding-top: 14px;
+	font-weight: 600;
+}
+
+.page.programdetail #content {
+	width: 100%;
+	height: 575px;
+	top: 145px;
+	position: absolute;
+	left: 0px;
+	background: url(../images/bk_default2.jpg) top left no-repeat;
+}
+
+.page.programdetail #menu {
+	width: 100%;
+	height: 100%;
+}
+
+.page.programdetail #menu .major {
+	position: absolute;
+	width: 544px;
+	height: 426px;
+	left: 66px;
+	top: 76px;
+	padding: 35px 0 0 0;
+	/*background: #333230;*/
+	box-shadow: 2px 2px 6px 0px #0C1E32;
+	background-color: rgba(31,87,112, 1.0);
+	border-bottom-right-radius: 20px 20px;
+	border-bottom-left-radius: 20px 20px;		
+}
+
+.page.programdetail #menu .major a {
+	position: relative;
+	display: block;
+	height: 30px;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-left: 15px;
+	padding-bottom: 5px;
+	text-align: left;
+	font-size: 28px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	border-radius: 8px;
+	background-color: rgba(48,138,200,1.00);
+}
+.page.programdetail #menu .major a.back-button {
+	font-size: 26px;
+	top: 0px;
+	text-align: left;
+	margin-bottom: 20px;
+	background-color: rgba(48,138,200,0.70);
+	border-radius: 8px;
+	margin-bottom: 200px;
+}
+.page.programdetail #menu .major a.selected {
+	background: #d36012;
+	border-radius: 8px;
+}
+
+.page.programdetail #menu .minor {
+	position: absolute;
+	width: 600px;
+	height: 377px;
+	top: 93px;
+	left: 640px;
+
+}
+
+.page.programdetail #menu .minor .arrow-button {
+	display: block;
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	top: 381px;
+	border-radius: 30px;
+	margin: 0;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.page.programdetail #menu .minor .arrow-button.sub-page-prev {
+	left: -19px;
+}
+
+.page.programdetail #menu .minor .arrow-button.sub-page-next {
+	right: 30px;
+}
+
+.page.programdetail #menu .minor .arrow-button:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.page.programdetail #menu .minor .arrow-left {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	margin: -20px 0 0 -15px;
+}
+
+.page.programdetail #menu .minor .arrow-right {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	margin: -20px 0 0 -5px;
+}
+
+
+.page.programdetail #menu .minor .back-tab {
+	position: absolute;
+	display: none;
+}
+
+.page.programdetail #menu .minor .back-tab img {
+	width: 90%;
+	height: 90%;
+	margin: 40px 0px 0px 25px;
+}
+
+.page.programdetail #menu .minor .menu-tab {
+	position: absolute;
+	display: none;
+	width: 610px;
+}
+
+.page.programdetail #menu .minor .sub-page {
+	display: none;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.page.programdetail #menu .minor .sub-header {
+	margin-top: 0px;
+	height: 30px;
+	color: rgba(189,239,254,1.00);
+	/*color: #FFFF92;*/
+}
+
+.page.programdetail #menu .minor .sub-footer {
+	position: relative;
+	height: 50px;
+	color: #C0DDA3;
+	text-align: center;
+	top: -60px;
+	left: -20px;
+	text-shadow: 2px 2px 6px #000000;
+
+}
+
+.page.programdetail #menu .minor .sub-content {
+    margin-top: 2px;
+	height: 420px;
+    overflow: hidden;
+    position: relative;
+}
+
+.page.programdetail #menu .minor .sub-content p {
+	margin-bottom: 2px;
+	line-height: 40px;
+	padding-top: 16px;
+	padding-bottom: 0px;
+	padding-right: 30px;
+}
+
+.page.programdetail #menu .minor .sub-content .sub-image1 img
+,.page.programdetail #menu .minor .sub-content .sub-image2 img {
+	width: 100%;
+	height: 100%;
+}
+
+/* Layout 1, text only */
+.page.programdetail #menu .minor .sub-content.layout1 {
+	
+}
+
+.page.programdetail #menu .minor .sub-content.layout1 .sub-text1{
+	display: inline-block;
+	width: 100%;
+	padding-top: 20px;
+}
+
+.page.programdetail #menu .minor .sub-content.layout1 .sub-text2{
+	display: inline-block;
+	width: 100%;
+	padding-top: 10px;
+}
+
+.page.programdetail #menu .minor .sub-content.layout1 .sub-image1{
+	display: none;
+}
+
+.page.programdetail #menu .minor .sub-content.layout1 .sub-image2{
+	display: none;
+}
+
+/* Layout 2, text and image side by side */
+.page.programdetail #menu .minor .sub-content.layout2 {
+	
+}
+
+.page.programdetail #menu .minor .sub-content.layout2 .sub-text1{
+	display: inline-block;
+	float: left;
+	width: 520px;
+	padding-top: 20px;
+	padding-right: 10px;
+	z-index: 2;
+}
+
+.page.programdetail #menu .minor .sub-content.layout2 .sub-text2{
+	display: none;
+}
+
+.page.programdetail #menu .minor .sub-content.layout2 .sub-image1{
+	display: inline-block;
+	float: right;
+	width: 260px;
+	padding-top: 5px;
+	padding-left: 0px;
+	z-index: 1;
+	right: 1px;
+}
+
+.page.programdetail #menu .minor .sub-content.layout2 .sub-image2{
+	display: none;
+}
+
+/* Layout 2b, 2 text blocks side by side */
+.page.programdetail #menu .minor .sub-content.layout2b {
+	
+}
+
+.page.programdetail #menu .minor .sub-content.layout2b .sub-text1{
+	display: inline-block;
+	float: left;
+	width: 620px;
+	padding-top: 20px;
+	padding-right: 10px;
+	z-index: 2;
+}
+
+.page.programdetail #menu .minor .sub-content.layout2b .sub-text2{
+	display: inline-block;
+	/*float: right;*/
+	position: absolute;
+	left: 400px;
+	width: 360px;
+	padding-top: 20px;
+	padding-left: 0px;
+	z-index: 1;
+}
+
+.page.programdetail #menu .minor .sub-content.layout2b .sub-image1{
+	display: none;
+}
+
+.page.programdetail #menu .minor .sub-content.layout2b .sub-image2{
+	display: none;
+}
+
+/* Layout 3, text and image aligns vertically */
+.page.programdetail #menu .minor .sub-content.layout3 {
+	
+}
+
+.page.programdetail #menu .minor .sub-content.layout3 .sub-text1{
+	float: none;
+	height: 210px;
+	width: 720px;
+	padding-top: 20px;
+}
+
+.page.programdetail #menu .minor .sub-content.layout3 .sub-text2{
+	display: none;
+}
+
+.page.programdetail #menu .minor .sub-content.layout3 .sub-image1{
+	float: none;
+	height: 220px;
+}
+
+.page.programdetail #menu .minor .sub-content.layout3 .sub-image2{
+	display: none;
+}
+
+
+/* Layout 4, text 1 on top, text 2 and image at bottom */
+.page.programdetail #menu .minor .sub-content.layout4 {
+	
+}
+
+.page.programdetail #menu .minor .sub-content.layout4 .sub-text1{
+	display: block;
+	float: none;
+	height: 220px;
+	padding-top: 20px;
+}
+
+.page.programdetail #menu .minor .sub-content.layout4 .sub-text2{
+	float: left;
+	width: 500px;
+	height: 200px;
+}
+
+.page.programdetail #menu .minor .sub-content.layout4 .sub-image1{
+	float: left;
+	width: 240px;
+	height: 200px;
+}
+
+.page.programdetail #menu .minor .sub-content.layout4 .sub-image2{
+	display: none;
+}
+
+/* Layout 5, text overlays image */
+.page.programdetail #menu .minor .sub-content.layout5 {
+	
+}
+
+.page.programdetail #menu .minor .sub-content.layout5 .sub-text1{
+	display: block;
+	position: absolute;
+	height: 225px;
+	width: 760px;
+	top: 20px;
+	left: 10px;
+	padding: 15px;
+	z-index: 1;
+	background: rgba(0,0,0,0);
+}
+
+.page.programdetail #menu .minor .sub-content.layout5 .sub-text2{
+	display: none;
+}
+
+.page.programdetail #menu .minor .sub-content.layout5 .sub-image1{
+	width: 100%;
+	height: 100%;
+}
+
+.page.programdetail #menu .minor .sub-content.layout5 .sub-image2{
+	display: none;
+}
+
+
+/* Layout 6, ONLY an image (map) */
+.page.programdetail #menu .minor .sub-content.layout6 {
+	
+}
+
+.page.programdetail #menu .minor .sub-content.layout6 .sub-text1{
+	display: none;
+}
+
+.page.programdetail #menu .minor .sub-content.layout6 .sub-text2{
+	display: none;
+}
+
+.page.programdetail #menu .minor .sub-content.layout6 .sub-image1{
+	width: 100%;
+	height: 100%;
+	padding-top: 20px;
+}
+
+.page.programdetail #menu .minor .sub-content.layout6 .sub-image2{
+	display: none;
+}
+
+/* Layout 7, EDUCATION LIBRARY */
+.page.programdetail #menu .minor .sub-content.layout7 {
+	
+}
+
+.page.programdetail #menu .minor .sub-content.layout7 .sub-text1{
+	display: inline-block;
+	width: 100%;
+	padding-top: 20px;
+	font-size: 32px;
+}
+
+.page.programdetail #menu .minor .sub-content.layout7 .sub-text2{
+	display: inline-block;
+	width: 100%;
+	padding-top: 10px;
+}
+
+.page.programdetail #menu .minor .sub-content.layout7 .sub-image1{
+	width: 32px;
+	height: 32px;
+	margin: -20px 0 0 0px;
+}
+
+.page.programdetail #menu .minor .sub-content.layout7 .sub-image2{
+	display: none;
+}

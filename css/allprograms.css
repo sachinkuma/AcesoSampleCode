@@ -1,0 +1,294 @@
+.page.allprograms {
+	width: 1280px;
+	height: 720px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background: url(../images/bk_default2.jpg) top left no-repeat;
+}
+.page.allprograms .background {
+	
+}
+.page.allprograms .page-title {
+	left: 66px;
+	top: 100px;
+	width: 544px;
+	height: 66px;
+	z-index: 1;
+	text-align: center;
+	letter-spacing: 1px;
+	color: #F0F4F5;
+	line-height: 72px;
+	background-size: cover;
+	background-color: #0078ad;
+	border-top-left-radius: 26px 26px;
+	border-top-right-radius: 26px 26px;
+	font-weight: bold;
+}
+
+.page.allprograms #header {
+	width: 100%;
+	height: 145px;
+	position: absolute;
+	background: url(../images/bk_secondary_gradient.png) top left no-repeat;
+}
+
+.page.allprograms #header #heading1 {
+	height: 100px;
+	top: 75px;
+	left: 436px;
+	position: absolute;
+	display: inline-block;
+	float: left;
+}
+
+.page.allprograms #header #heading1 p {
+	color: #45466D;
+}
+
+.page.allprograms #header #heading2 {
+	width: 546px;
+	height: 56px;
+	top: 162px;
+	left: 60px;
+	position: absolute;
+	float: left;
+	z-index: 1;
+	border: 4px solid rgba(240,244,245,1.00);
+	background-color: #94b329;
+	box-shadow: 1px 4px 8px 0px #353535;
+	border-radius: 12px;
+}	
+
+.page.allprograms #header #heading2 p {
+	color: #F0F4F5;
+	text-align: center;
+	font-size: 28px;
+	padding-top: 14px;
+	font-weight: 600;
+}
+
+.page.allprograms #content {
+	width: 100%;
+	height: 575px;
+	top: 145px;
+	position: absolute;
+	left: 0px;
+	background: url(../images/bk_default2.jpg) top left no-repeat;
+
+}
+
+.page.allprograms #content .sub-header {
+	margin: 40px 0px 0px 660px;
+	height: 30px;
+	color: rgba(189,239,254,1.00);
+	font-size: 25px;
+	/*color: #FFFF92;*/
+}
+
+
+.page.allprograms #menu {
+	width: 100%;
+	height: 100%;
+}
+
+.page.allprograms #menu .major {
+	position: absolute;
+	width: 530px;
+	height: 439px;
+	left: 66px;
+	top: 76px;
+	padding: 15px 10px 0px 8px;	
+	box-shadow: 2px 2px 6px 0px #0C1E32;
+	background-color: rgba(31,87,112, 1.0);
+	border-bottom-right-radius: 20px 20px;
+	border-bottom-left-radius: 20px 20px;	
+	overflow-y: auto;    
+	overflow-x: hidden;	
+}
+
+.page.allprograms #menu .major a {
+	position: relative;
+	display: block;
+	height: 30px;
+	margin-top: 8px;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-left: 15px;
+	padding-bottom: 5px;
+	text-align: left;
+	font-size: 26px;
+	font-weight: 700;
+	letter-spacing: .5px;
+	border-radius: 8px;
+	background-color: rgba(48,138,200,1.00);
+}
+.page.allprograms #menu .major a.back-button {
+	/*  position: absolute;
+	width: 292px;*/
+	font-size: 26px;
+	top: 0px;
+	text-align: left;
+	margin-bottom: 20px;
+	background-color: rgba(48,138,200,0.70);
+	border-radius: 8px;
+
+}
+.page.allprograms #menu .major a.selected {
+	background: #d36012;
+	border-radius: 8px;
+}
+
+.page.allprograms #menu .minor {
+	position: absolute;
+	width: 600px;
+	height: 420px;
+	top: 90px;
+	left: 660px;
+}
+
+.page.allprograms #menu .minor .arrow-button {
+	display: block;
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	top: 381px;
+	border-radius: 30px;
+	margin: 0;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.page.allprograms #menu .minor .arrow-button.sub-page-prev {
+	left: -19px;
+}
+
+.page.allprograms #menu .minor .arrow-button.sub-page-next {
+	right: 30px;
+}
+
+.page.allprograms #menu .minor .arrow-button:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.page.allprograms #menu .minor .arrow-left {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	margin: -20px 0 0 -15px;
+}
+
+.page.allprograms #menu .minor .arrow-right {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	margin: -20px 0 0 -5px;
+}
+
+
+.page.allprograms #menu .minor .back-tab {
+	position: absolute;
+	display: none;
+}
+
+.page.allprograms #menu .minor .back-tab img {
+	width: 90%;
+	height: 90%;
+	margin: 40px 0px 0px 25px;
+}
+
+.page.allprograms #menu .minor .menu-tab {
+	position: absolute;
+	display: none;
+	width: 610px;
+}
+
+.page.allprograms #menu .minor .sub-page {
+	display: none;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.page.allprograms #menu .minor .sub-header {
+	margin-top: 0px;
+	height: 30px;
+	color: rgba(189,239,254,1.00);
+	/*color: #FFFF92;*/
+}
+
+.page.allprograms #menu .minor .sub-footer {
+	position: relative;
+	height: 50px;
+	color: #C0DDA3;
+	text-align: center;
+	top: -60px;
+	left: -20px;
+	text-shadow: 2px 2px 6px #000000;
+
+}
+
+.page.allprograms #menu .minor .sub-content {
+    margin-top: 2px;
+	height: 445px;
+    overflow: hidden;
+    position: relative;
+}
+
+.page.allprograms #menu .minor .sub-content p {
+	margin-bottom: 2px;
+	line-height: 50px;
+	padding-top: 26px;
+	padding-bottom: 0px;
+	padding-right: 30px;
+}
+
+.page.allprograms #menu .minor .sub-content .sub-image1 img
+,.page.allprograms #menu .minor .sub-content .sub-image2 img {
+	width: 100%;
+	height: 100%;
+}
+
+/* Layout 7, EDUCATION LIBRARY */
+.page.allprograms #menu .minor .sub-content.layout7 {
+	
+}
+
+.page.allprograms #menu .minor .sub-content.layout7 .sub-text1{
+	display: inline-block;
+	width: 100%;
+	height: 415px;
+	font-size: 32px;
+	overflow-y: auto;    
+	overflow-x: hidden;	
+}
+
+.page.allprograms #menu .minor .sub-content.layout7 .sub-text1 a {
+	width: 550px;
+	height: 42px;
+	font-size: 28px;
+	line-height: 42px;
+	padding-left: 35px;
+	margin: 10px 0;
+	display: block;
+	text-align: left;
+	position: relative;
+	color: rgba(255,255,255,1.00);
+	border-radius: 8px;   
+	overflow: hidden;
+}
+
+.page.allprograms #menu .minor .sub-content.layout7 .sub-text1 a.bookmarked {    
+	background: url(../images/checkmark.png) top left no-repeat;
+}
+
+.page.allprograms #menu .minor .sub-content.layout7 .sub-text1 a.bookmarked.active {    
+	background: url(../images/checkmark.png) top left no-repeat;
+	background-color: rgba(211,96,18,1.00);
+}

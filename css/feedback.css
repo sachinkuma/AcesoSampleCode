@@ -1,0 +1,300 @@
+.feedback {
+	width: 1280px;
+	height: 720px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background: url(../images/bk_default-movies.jpg) top left no-repeat;
+}
+
+.feedback .background {
+    width: 1280px;
+    height: 720px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: url(../images/bk_default2.jpg) top left no-repeat;
+    z-index: 1;
+}
+
+.feedback .page-title {
+    left: 66px;
+    top: 100px;
+    width: 328px;
+    height: 66px;
+    z-index: 1;
+    text-align: center;
+    letter-spacing: 1px;
+	color: #549FC3;
+    line-height: 72px;
+    background-size: cover;
+	background-color: #FCFCFC;
+    border-top-left-radius: 26px 26px;
+    border-top-right-radius: 26px 26px;
+    font-weight: bold;
+	position: absolute;
+}
+
+.feedback #header {
+    width: 100%;
+    height: 145px;
+    position: absolute;
+    background: url(../images/bk_secondary_gradient.png) top left no-repeat;
+}
+
+.feedback #header #heading1 {
+	height: 340px;
+	top: 300px;
+	left: 130px;
+	position: absolute;
+	display: inline-block;
+	float: left;
+	width: 273px;
+	z-index: 2;
+}
+.feedback #header #heading1 img {
+	width: 205px;
+	height: 275px;
+	margin-top: 30px;
+}
+
+.feedback #header #heading1 p {
+    color: #003768;
+}
+
+.feedback #header #heading2 {
+    width: 340px;
+    height: 56px;
+    top: 162px;
+    left: 60px;
+    position: absolute;
+    float: left;
+    z-index: 1;
+	background-color: #559CBE;
+	box-shadow: 1px 4px 8px 0px #353535;  
+}
+
+.feedback #header #heading2 p {
+	color: #F0F4F5;
+    text-align: center;
+    font-size: 28px;
+    padding-top: 14px;
+    font-weight: 600;
+}
+
+.feedback #content {
+    width: 100%;
+    height: 575px;
+    top: 145px;
+    position: absolute;
+    left: 0px;
+    background: url(../images/bk_default2.jpg) top left no-repeat;
+}
+
+.feedback #menu {
+    width: 100%;
+    height: 100%;
+}
+
+.feedback #menu .major {
+	position: absolute;
+	width: 330px;
+	height: 426px;
+	left: 66px;
+	top: 76px;
+	padding: 35px 0 0 0;
+	/*background: #333230;*/
+	box-shadow: 2px 2px 6px 0px #0C1E32;
+	background-color: rgba(31,87,112, 1.0);
+	border-bottom-right-radius: 20px 20px;
+	border-bottom-left-radius: 20px 20px;	
+}
+
+.feedback #menu .major a {
+	position: relative;
+	display: block;
+	height: 30px;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-left: 15px;
+	padding-bottom: 5px;
+	text-align: left;
+	font-size: 28px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	border-radius: 8px;
+	background-color: rgba(48,138,200,1.00);
+}
+.feedback #menu .major a.back-button {
+	font-size: 26px;
+	top: 0px;
+	text-align: left;
+	margin-bottom: 20px;
+	background-color: rgba(48,138,200,0.70);
+	border-radius: 8px;	
+}
+.feedback #menu .major a.selected ,
+.feedback #menu .major a.back-button.selected {
+	background: #90B03E;
+	border-radius: 8px;
+}
+
+
+.feedback #menu .minor {
+	position: absolute;
+	width: 810px;
+	height: 377px;
+	top: 15px;
+	left: 460px;
+
+}
+
+.feedback #menu .minor .arrow-button {
+	display: block;
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	top: 381px;
+	border-radius: 30px;
+	margin: 0;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.feedback #menu .minor .arrow-button.sub.prev {
+	left: -19px;
+}
+
+.feedback #menu .minor .arrow-button.sub.next {
+	right: 30px;
+}
+
+.feedback #menu .minor .arrow-button:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.feedback #menu .minor .arrow-left {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	margin: -20px 0 0 -15px;
+}
+
+.feedback #menu .minor .arrow-right {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	margin: -20px 0 0 -5px;
+}
+
+
+.feedback #menu .minor .back-tab {
+	position: absolute;
+	display: none;
+}
+
+.feedback #menu .minor .back-tab img {
+	width: 90%;
+	height: 90%;
+	margin: 40px 0px 0px 25px;
+}
+
+.feedback #menu .minor .menu-tab {
+	position: absolute;
+	display: none;
+	width: 810px;
+}
+
+.feedback #menu .minor .sub.{
+	display: none;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.feedback #menu .minor .sub-header {
+	margin-top: 0px;
+	height: 30px;
+	color: rgba(189,239,254,1.00);
+	/*color: #FFFF92;*/
+}
+
+.feedback #menu .minor .sub-footer {
+	position: relative;
+	height: 50px;
+	color: #C0DDA3;
+	text-align: center;
+	top: -60px;
+	left: -20px;
+	text-shadow: 2px 2px 6px #000000;
+
+}
+
+.feedback #menu .minor .sub-content {
+    margin-top: 2px;
+	height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.feedback #menu .minor .sub-content p {
+	margin-bottom: 2px;
+	line-height: 40px;
+	padding-top: 16px;
+	padding-bottom: 0px;
+	padding-right: 20px;
+}
+.feedback #menu .minor .sub-content p.title{
+	font-size: 30px;
+}
+.feedback #menu .minor .sub-content p.year,
+.feedback #menu .minor .sub-content p.length,
+.feedback #menu .minor .sub-content p.rating{
+  float: left;  
+  font-weight: normal;
+ }
+
+
+.feedback #menu .minor .sub-content .sub-image1 img
+,.feedback #menu .minor .sub-content .sub-image2 img {
+	width: 100%;
+	height: 100%;
+}
+
+/* Layout 5, text overlays image */
+.feedback #menu .minor .sub-content.layout5 {
+	
+}
+
+.feedback #menu .minor .sub-content.layout5 .sub-text1{
+	display: block;
+	position: absolute;
+	height: 225px;
+	width: 760px;
+	top: 20px;
+	left: 10px;
+	padding: 15px;
+	z-index: 1;
+	background: rgba(0,0,0,0);
+}
+
+.feedback #menu .minor .sub-content.layout5 .sub-text2{
+	display: none;
+}
+
+.feedback #menu .minor .sub-content.layout5 .sub-image1{
+	width: 100%;
+	height: 100%;
+}
+
+.feedback #menu .minor .sub-content.layout5 .sub-image2{
+	display: none;
+}
+

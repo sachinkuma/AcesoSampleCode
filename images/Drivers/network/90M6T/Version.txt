@@ -1,0 +1,8 @@
+Title: Network: Airplane mode switch Driver
+Version: A00
+OEM Name: 
+OEM Version: 1.4.1
+Computers: Inspiron: 7537, 5537, 3737, 3437, 3135, 3137, 7437, 5735, 5437, 3537, 5737, 5535, 7737, 5435; XPS Notebook: 9530, XPS 9Q34, XPS 9Q33; Alienware Notebook: Alienware 14, M17xR4, Alienware 17, M14xR2, M18xR2, Alienware 18; Vostro Notebook: Vostro 5470; Precision: M3800, M6700, M4700, M4800, M6800; Latitude: E6530, E5430, E7440, E6430 ATG, E6430, 3330, 3440, E6330, E5530, E6430s, 3540, E6440, E6230, E6540, E7240, E5440, 6430U, E5540
+OS: Windows 8.1 64-bit - 8.1 SL (Single Language), Windows 8.1 64-bit - 8.1 Pro, Windows 8.1 64-bit - 8.1
+Languages: Japanese,Chinese Simplified,Spanish,Danish,Portuguese (Portugal),French,Finnish,Norwegian,Br Portuguese,Dutch,English,Turkish,Korean,Arabic,Russian,Iberian Portuguese,Greek,Czech,Polish,Chinese Hong Kong,Italian,Chinese Traditional,German,Swedish
+Created: 8/1/2013

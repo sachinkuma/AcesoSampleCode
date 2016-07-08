@@ -1,0 +1,263 @@
+*	{
+	line-height: 1;
+	margin: 0px;
+	outline: 0px;
+	padding: 0px;
+	position: static;
+}
+
+html	{
+	height: 100%;
+	width: 100%;
+}
+
+body	{
+	background: rgba(0,0,0,1.0);
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: rgba(255,255,255,1.0);
+	height: 100%;
+	width: 100%;
+
+}
+
+#clear {
+clear: both;
+}
+
+/* intro2 panel */
+
+#intro2 {
+	background: url(../images/bk_intro.jpg) top center no-repeat;
+	width: 1280px;
+	height: 720px;
+	font-size: 28px;
+	position: absolute;
+	display: inline-block;
+	z-index: 0;	
+	box-shadow: 6px 6px 8px #313232;
+}
+
+#intro2 #logo{
+	background: url(../images/logo_large.png) top left no-repeat;
+	width: 506px;
+	height: 88px;
+	display: block;
+	float: left;
+	margin: 45px 0 0 560px;
+}
+
+#intro2 #remote {
+	background: url(../images/img_pillowspeaker-kpsunnyside.png) no-repeat;
+	width: 250px;
+	height: 483px;
+	/*margin: 120px 0px 0px -60px;*/
+	display: inline-block;
+	position: absolute;
+	left: 280px;
+	top: 64px;
+
+}
+#intro2 #heading {
+	/*background: url(../images/img_pillowspeaker-swedish.png) 90px 5px no-repeat;*/
+	/*margin: 120px 0px 0px 10px;*/
+	width: 1000px;
+	height: 80px;
+	display: inline-block;
+	position: absolute;
+	left: 175px;
+	top: 138px;
+	text-align: center;
+}
+#intro2 #regtext {
+	width: 460px;
+	height: 483px;
+	display: inline-block;
+	position: absolute;
+	left: 110px;
+	top: 160px;
+
+}
+#intro2 #regtext p {
+	min-height: 22px;
+	line-height: 24px;
+	margin: 0px 0px 0px 0px;
+	text-align: left;
+	position: relative;
+	font-weight: 700;
+	font-size: 20px;
+	
+}
+
+#intro2 #regtext2 {
+	width: 600px;
+	height: 526px;
+	display: inline-block;
+	position: absolute;
+	left: 610px;
+	top: 160px;
+}
+#intro2 #regtext2 p {
+	min-height: 22px;
+	line-height: 24px;
+	margin: 0px 0px 0px 0px;
+	text-align: left;
+	position: relative;
+	font-weight: 700;
+	font-size: 20px;	
+}
+
+#intro2 #regtext2 ul {
+	min-height: 22px;
+	line-height: 24px;
+	margin: 0px 0px 0px 20px;
+	text-align: left;
+	position: relative;
+	font-weight: 700;
+	font-size: 20px;	
+}
+
+#intro2 #regtext2 ul li{
+	padding-bottom: 10px;
+}
+
+#intro2 #regtext p.text1 {
+	color: rgba(252,254,254,1.00);
+	text-align: left;
+}
+
+#intro2 #regtext p.text2  {
+	color: rgba(246,242,115,1.00);
+	text-align: left;
+}
+	
+#intro2 #instruction {
+	/*background: url(../images/img_pillowspeaker-swedish.png) 90px 5px no-repeat;*/
+	/*margin: 120px 0px 0px 10px;*/
+	width: 570px;
+	height: 483px;
+	display: inline-block;
+	position: absolute;
+	left: 650px;
+	top: 180px;
+	text-align: right;
+}
+
+#intro2 #instruction p {
+	min-height: 30px;
+	line-height: 30px;
+	margin: 0px 0px 0px 0px;
+	text-align: left;
+	position: relative;
+	font-weight: 700;
+}
+
+
+#intro2 #instruction p.text1 {
+	color: rgba(252,254,254,1.00);
+	text-align: left;
+}
+
+#intro2 #instruction p.text2  {
+	color: rgba(246,242,115,1.00);
+	text-align: left;
+}
+
+#intro2 #instruction p.text2-sm  {
+	color: rgba(246,242,115,1.00);
+	text-align: left;
+	font-size: 22px;
+}
+#intro2 #instruction  p.text3  {
+	color: rgba(189,239,254,1.00)
+	text-align: left;
+}
+#intro2 #instruction p.text4 {
+	color: rgba(252,254,254,1.00);
+	text-align: left;
+	font-size: 40px;
+}
+
+/*#intro2 #aboutus {
+	background-repeat: no-repeat;
+	background-position: top center no-repeat;
+	width: 420px;
+	height: 260px;
+	margin: 17px 0px 0px 595px;
+	position: absolute;
+	left: 73px;
+	top: 166px;
+	background-color: rgba(101,183,36,1.00);
+}
+
+#intro2 #aboutus #image {
+	background: url(../images/video_sim-welcomevideo_sm.jpg) top center no-repeat;
+	width: 408px;
+	height: 248px;
+	margin: 4px 4px 4px 4px;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+}
+*/
+
+#intro2 #buttons {
+	width: 420px;
+	height: 172px;
+	font-size: 36px;
+	margin: 400px 0px 0px 54px;
+	display: inline-block;
+	position: absolute;
+	left: 55px;
+	top: 76px;
+}
+
+#intro2 #buttons a {
+	/*background: url(../images/intro2_badge.png) top center no-repeat;*/
+	line-height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	color: rgba(252,252,252,1.00);
+	background-color: #18416D;
+	width: 420px;
+	height: 50px;
+	border-radius: 6px;
+	box-shadow: 6px 4px 10px #333333;
+
+}
+
+#intro2 #buttons a.active {
+	background-color: #D36012;	/*background: url(../images/intro2_badge-hi.png) top center no-repeat;*/	
+}
+
+#intro2 #buttons a.accept.active {
+	background: rgba(245,128,37,1.0);
+	font-size: 40px;
+	width: 420px;
+}
+
+#intro2 #buttons a.accept {
+	width: 420px;
+	height: 50px;
+	margin: 0px 0px 0px 0px;
+	float: left;
+	position: relative;
+}
+
+#intro2 #buttons a.decline {
+	width: 420px;
+	height: 50px;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	float: right;
+	position: relative;
+}
+
+#intro2 #buttons a.decline.active {
+	background: #D36012;
+	width: 420px;
+}
+

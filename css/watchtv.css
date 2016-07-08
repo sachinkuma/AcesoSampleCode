@@ -1,0 +1,419 @@
+/*
+*	{
+	line-height:1;
+	margin: 0px;
+	outline: 0px;
+	padding: 0px;
+}
+html	{
+	height: 5000px;
+	width: 12000px;
+}
+body	{
+	font-family: "HelveticaNeue LT 55 Roman", Helvetica, Arial, sans-serif;
+	width: 100%;
+}
+#clear {
+clear: both;
+}
+*/
+/* watchtv grid */
+.ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;	
+}
+
+#watchtv {
+	background: #008ab0 url('../images/bk_epg-grid_Sunnyside.png') 40px 34px no-repeat;
+	height: 720px;
+	width: 1280px;
+	display: none;
+	position: absolute;
+}
+#gridbg {
+	background: transparent url(../images/loading.gif) 575px 425px no-repeat;
+	/*background: url(../images/gridbg.png) top center no-repeat;*/
+	/*background: none;*/	
+	width: 1280px;
+	height: 720px;
+	position: absolute;
+	z-index: 0;
+}
+/*
+#gridcover {
+	background: url(../images/bk_tv_epg_grid.png) top center no-repeat;
+	width: 1280px;
+	height: 720px;
+	position: absolute;
+	z-index: 20;
+}
+*/
+#gridinfo	{
+	width: 1200px;
+	height: 720px;
+	margin: 0 40px;
+	position: absolute;
+	z-index: 25;
+}
+#gridinfo div#current	{
+	color: #ffffff;
+	width: 100%;
+	height: 170px;
+	position: absolute;
+}
+#gridinfo div#current p	{
+	min-height: 32px;
+	color: #000000;
+	font-size: 32px;
+	line-height: 32px;	
+	float: left;
+	text-overflow: ellipsis;	
+}
+#gridinfo div#current p.title	{
+	margin: 120px 0 0 280px;
+	padding: 3px 10px;
+	overflow: hidden;
+	position: absolute;
+	color: #ffff66;
+	background: #012e44;
+	border-radius: 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;	
+}
+#gridinfo div#current p.channel	{
+	color: #ffffff;
+	width: 350px;
+	margin-top: 110px;
+	text-align: right;
+	padding-right: 10px;
+	float: right;
+	display:none;
+}
+#gridinfo div#current p.time	{
+	color: #ffffff;
+	width: 268px;
+	font-size: 28px;
+	position: absolute;
+	margin-top: 123px;
+}
+#gridinfo div#current p.synopsis	{
+	font-size: 28px;
+	line-height: 32px;
+	}
+#gridinfo div#current p.date	{
+	width:385px;
+	height: 25px;
+	right: 0;
+	top: 48px;
+	color: #ffffff;
+	font-size: 24px;
+	text-align: right;
+	float: right;
+	position: absolute;
+	
+}
+#gridinfo div#current p.message	{
+	width: 385px;
+	height: 25px;
+	right: 0;
+	top: 75px;
+	color: #ffffff;
+	font-size: 24px;
+	text-align: right;
+	float: right;
+	position: absolute;
+}
+#gridinfo div#current img	{
+	width: 300px;
+	height: 185px;
+	float: right;
+}
+
+#gridpanelwrapper {
+	width: 1200px;
+	height: 512px;
+	margin: 180px auto auto 40px;
+	border: 2px solid #ffffff;
+	border-radius: 10px;
+}
+
+#gridpanel {
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	position: absolute;
+	z-index: 0;
+}
+#gridpanel.today {
+	width: 240;
+	height: 64px;
+	margin: 0;
+	position: absolute;
+	z-index: 3;
+}
+#gridpanel.today div {
+	background: #93cce0;
+	height: 50px;
+	width: 226px;
+	color: #00161c;
+	font-size: 28px;
+	text-align: center;
+	border: 2px solid #dddddd;
+	padding: 5px;
+	line-height: 50px;
+	position: relative;
+	float: left;	
+}
+#gridpanel.channel {
+	height: 4800px;
+	width: 240px;
+	margin: 64px 0px 0px 0px;
+	position: absolute;
+	z-index: 2;
+}
+#gridpanel.channel div {
+	background: #93cce0;
+	height: 50px;
+	width: 226px;
+	color: #00161c;
+	font-size: 28px;
+	border: 2px solid #dddddd;
+	padding: 5px;
+	position: relative;
+	float: left;
+	line-height: 50px;
+}
+#gridpanel.channel div span {
+	line-height: 1;
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;	
+}
+#gridpanel.time {
+	height: 64px;
+	width: 10992px;
+	margin: 0px 0px 0px 240px;	
+	display: inline-block;
+	position: absolute;
+	z-index: 1;
+}
+#gridpanel.time div {
+	background: #93cce0;
+	height: 50px;
+	width: 226px;
+	color: #00161c;
+	font-size: 28px;
+	border: 2px solid #dddddd;
+	padding: 5px;
+	position: relative;
+	float: left;	
+	text-align: center;
+	line-height: 50px;
+}
+#gridpanel.program {
+	height: 4800px;
+	width: 10992px;
+	margin: 64px 0px 0px 240px;
+	display: inline-block;
+	position: absolute;
+	z-index: 10;
+}
+#gridpanel.program div#channel {
+	height: 64px;
+	width: 10992px;
+}
+#gridpanel.program div#channel div {
+	background: #006699;
+	height: 50px;
+	width: 226px;
+	color: #ffffff;
+	font-size: 28px;
+	border: 2px solid #dddddd;
+	padding: 5px;
+	position: relative;
+	float: left;
+	line-height: 50px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;	
+}
+#gridpanel.program div#channel div.active	{
+	color: #000000;
+	background: rgba(245,128,37,1.0);
+	height: 76px;
+	margin: -15px;
+	border-radius: 5px;
+	border: 4px solid #ffffff;
+	z-index: 10;
+	line-height: 76px;
+	font-size: 36px;
+}
+#gridpanel.program div#channel div.D30	{
+	width: 226px;
+}
+#gridpanel.program div#channel div.D60	{
+	width: 466px;
+}
+#gridpanel.program div#channel div.D90	{
+	width: 706px;
+}
+#gridpanel.program div#channel div.D120	{
+	width: 946px;
+}
+#gridpanel.program div#channel div.D150	{
+	width: 1186px;
+}
+#gridpanel.program div#channel div.D180	{
+	width: 1426px;
+}
+#gridpanel.program div#channel div.D210	{
+	width: 1666px;
+}
+#gridpanel.program div#channel div.D240	{
+	width: 1906px;
+}
+#gridpanel.program div#channel div.D270	{
+	width: 2146px;
+}
+#gridpanel.program div#channel div.D300	{
+	width: 2386px;
+}
+#gridpanel.program div#channel div.D30.active	{
+	width: 252px;
+}
+#gridpanel.program div#channel div.D60.active	{
+	width: 492px;
+}
+#gridpanel.program div#channel div.D90.active	{
+	width: 732px;
+}
+#gridpanel.program div#channel div.D120.active	{
+	width: 972px;
+}
+#gridpanel.program div#channel div.D150.active	{
+	width: 1212px;
+}
+#gridpanel.program div#channel div.D180.active	{
+	width: 1452px;
+}
+#gridpanel.program div#channel div.D210.active	{
+	width: 1692px;
+}
+#gridpanel.program div#channel div.D240.active	{
+	width: 1932px;
+}
+#gridpanel.program div#channel div.D270.active	{
+	width: 2172px;
+}
+#gridpanel.program div#channel div.D300.active	{
+	width: 2412px;
+}
+#overlay {
+	background: #000000;
+	height: 100%;
+	width: 100%;
+	display: none;
+	z-index: 999;
+}
+#overlay #channelinfo {
+	/*background: #56a2d6;*/
+	background: #113663;
+	color: white;
+	/*width: 400px;*/
+	height: 75px;
+	display: none;
+	position: absolute;
+	margin-top: 25px;
+	margin-left: 25px;
+}
+#overlay #channelinfo p {
+	font-size: 32px;
+	font-weight: bold;
+	padding: 25px;
+}
+
+/* light on dark background theme */
+#watchtv.lightdark #gridinfo div#current p.title {
+	background: #3b3b3b;
+	color: #ffff66;
+}
+
+#watchtv.lightdark #gridpanel.today div {
+	background: #455660;
+	color: #ffffff;
+}
+
+#watchtv.lightdark #gridpanel.channel div {
+	background: #455660;
+	color: #ffffff;
+}
+
+#watchtv.lightdark #gridpanel.time div {
+	background: #455660;
+	color: #ffffff;
+}
+
+#watchtv.lightdark #gridpanel.program div#channel div {
+	background: #3b3b3b;
+	color: #ffffff;
+}	
+
+#watchtv.lightdark #gridpanel.program div#channel div.active {
+	background: #008aaf;
+	color: #043546;
+}
+
+/* dark on light background theme */
+#watchtv.darklight #gridinfo div#current p.title {
+	background: #d1d6d9;
+	color: #043546;
+}
+
+#watchtv.darklight #gridpanel.today div {
+	background: #bbd2d8;
+	color: #043546;
+	border: 2px solid #333333;
+}
+
+#watchtv.darklight #gridpanel.channel div {
+	background: #bbd2d8;
+	color: #043546;
+	border: 2px solid #333333;
+}
+
+#watchtv.darklight #gridpanel.time div {
+	background: #bbd2d8;
+	color: #043546;
+	border: 2px solid #333333;
+}
+
+#watchtv.darklight #gridpanel.program div#channel div {
+	background: #d1d6d9;
+	color: #043546;
+}	
+
+#watchtv.darklight #gridpanel.program div#channel div.active {
+	background: #f8f89e;
+	color: #043546;
+	border: 4px solid #333333;
+}
+
+#watchtv.darklight #gridinfo div#current p.time	{
+	background: #bbd2d8;
+	color: #043546;
+}
+
+#watchtv.darklight #gridinfo div#current p.date	{
+	background: #bbd2d8;
+	color: #043546;
+	border: 2px solid #333333;
+}
+#watchtv.darklight #gridinfo div#current p.message	{
+	background: #bbd2d8;
+	color: #043546;
+}

@@ -1,0 +1,137 @@
+#webbrowser {
+    background: #1e78af url(../images/bk_hires_epg_1242x768.jpg) top left no-repeat;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#webbrowser #mask {
+    position: absolute;
+    width: 1242px;
+    height: 768px;
+    left: 0px;
+    top: 0px;
+    z-index: 11;
+    text-align: center;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    display: none;
+}
+
+#webbrowser #mask #icon {
+    position: absolute;
+    top: 320px;
+    left: 517px;
+    background: url(../images/loading18.gif) center center no-repeat;
+    width: 128px;
+    height: 128px;
+}
+
+#webbrowser #mask p {
+    position: absolute;
+    top: 460px;
+    width: 1242px;
+    font-size: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#webbrowser #close {
+    right: 46px;
+    top: 0px;
+    opacity: 0.8;
+}
+
+#webbrowser #content {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    overflow: none;
+}
+
+#webbrowser #content #agreement {
+    width: 100%;
+    height: 100%;
+}
+
+#webbrowser #content #internetterms {
+    background-color: #FFFFFF;
+    color: #444;
+    font-size: 18px;
+    font-weight: normal;
+    white-space: pre-line;
+    overflow: scroll;
+    width: 1112px;
+    height: 580px;
+    margin: 20px 50px;
+    padding: 15px;
+}
+
+#webbrowser #content #selection {
+    width: 1000px;
+    height: 60px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#webbrowser #content #selection a {
+    font-size: 36px;
+    padding: 8px 0;
+    text-align: center;
+    width: 334px;
+    display: block;
+}
+
+#webbrowser #content ::-webkit-scrollbar {
+    width: 46px;
+    height: 46px;
+}
+
+#webbrowser #content ::-webkit-scrollbar-track {
+    background: #dddddd;
+}
+
+#webbrowser #content ::-webkit-scrollbar-thumb {
+    background: #888888;
+}
+
+#webbrowser #content ::-webkit-scrollbar-button {
+    width: 46px;
+    height: 46px;
+}
+
+#webbrowser #content ::-webkit-scrollbar-button:vertical:decrement {
+    background: url(../images/button_up.png) center center no-repeat;
+}
+
+#webbrowser #content ::-webkit-scrollbar-button:vertical:decrement:active {
+    background: url(../images/button_up_click.png) center center no-repeat;
+}
+
+#webbrowser #content ::-webkit-scrollbar-button:vertical:increment {
+    background: url(../images/button_down.png) center center no-repeat;
+}
+
+#webbrowser #content ::-webkit-scrollbar-button:vertical:increment:active {
+    background: url(../images/button_down_click.png) center center no-repeat;
+}
+
+#webbrowser #content ::-webkit-scrollbar-button:horizontal:decrement {
+    background: url(../images/button_left.png) center center no-repeat;
+}
+
+#webbrowser #content ::-webkit-scrollbar-button:horizontal:decrement:active {
+    background: url(../images/button_left_click.png) center center no-repeat;
+}
+
+#webbrowser #content ::-webkit-scrollbar-button:horizontal:increment {
+    background: url(../images/button_right.png) center center no-repeat;
+}
+
+#webbrowser #content ::-webkit-scrollbar-button:horizontal:increment:active {
+    background: url(../images/button_right_click.png) center center no-repeat;
+}

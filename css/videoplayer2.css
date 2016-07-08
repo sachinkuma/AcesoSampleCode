@@ -1,0 +1,138 @@
+#videoplayer2 {
+    background: #000000;
+	width: 1280px;
+	height: 720px;
+}
+
+#videoplayer2 #mask {
+	position:fixed;
+	width: 1280px;
+	height: 720px;
+	left: 0px;
+	top: 0px;
+	background-color: #000000;
+	opacity: 0.9;
+	z-index: 11;
+	text-align: center;
+}
+
+#videoplayer2 #mask #icon {
+	position: absolute;
+	top: 320px;
+	left: 619px;
+	background: url(../images/loading18.gif) center center no-repeat;
+	width: 128px;
+	height: 128px;
+}
+
+#videoplayer2 #mask p {
+	position: absolute;
+	top: 460px;
+	width: 1280px;
+	font-size: 28px;
+	line-height: 28px;
+	text-align: center;
+	color: #ffffff;
+}
+
+#videoplayer2 #controlbar	{
+	background: #265c88;
+	width: 1306px;
+	height: 70px;
+	margin-top: 668px;
+	padding: 15px 30px;
+	text-align: center;
+}
+
+#videoplayer2 #controls {
+	position: relative;
+	display: inline-block;
+	height: 70px;
+}
+
+#videoplayer2 #controls #progress {
+    position: relative;
+    float: left;
+    width: 800px;
+}
+
+#videoplayer2 #controls #progress p{
+    float: left;
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 70px;
+}
+
+#videoplayer2 #controls #progress p.title	{
+    width: 500px;
+    text-align: left;
+}
+
+#videoplayer2 #controls #progress p.current {
+    width: 100px;
+}
+
+#videoplayer2 #controls #progress p.duration {
+    width: 100px;
+}
+
+
+#videoplayer2 #buttons {
+    position: relative;
+    float: left;
+}
+
+#videoplayer2 #buttons a {
+	height: 70px;
+	font-size: 30px;
+	line-height: 70px;
+	margin: 0 10px;
+	padding: 0 20px;
+	text-align: center;
+	position: relative;
+	display: block;
+	float: left;
+	color: rgba(255,255,255,1.00);
+	background-color: #318bc8;
+	border-radius: 8px; 
+}
+
+#videoplayer2 #buttons a#stop {
+    
+}
+	
+#videoplayer2 #videopanel {
+	background: #000000;
+	position: absolute;
+	z-index: 10;
+}
+
+#videoplayer2 #videopanel.windowmode {
+	width: 1280px;
+	height: 720px;
+	left: 89px;
+	top: 0px;
+}
+
+#videoplayer2 #videopanel.fullscreen {
+	width: 1280px;
+	height: 720px;
+	left: 0px;
+	top: 0px;
+	position:fixed;
+}
+
+#videoplayer2 #popup {
+	display: none;
+	position: absolute;
+	width: 566px;
+	left: 400px;
+	top: 268px;
+	z-index: 20;
+	padding: 10px 20px;
+	text-align: center;
+	font-size: 26px;
+	color: #FFF;
+	background: #265C88;
+	border-radius: 8px;
+}

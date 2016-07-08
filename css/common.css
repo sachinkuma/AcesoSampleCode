@@ -1,0 +1,185 @@
+/*****************************************************************************/
+/* Screen resolution, default background */
+body	{
+	width: 1280px;
+	height: 720px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background: url(../images/bk_default.jpg) top left no-repeat;
+}
+
+body.test {
+	overflow: scroll;
+}
+
+/* Page size. Sometimes page is smaller than fullscreen with a permanent navigation bar on the left */
+div.page {
+	width: 1280px;
+	height: 720px;
+	margin: 0;
+	padding: 0;
+}
+
+/*****************************************************************************/
+/* logo */
+div.logo, div.logo-large {
+	background: url(../images/logo_large.png) top left no-repeat;
+	width: 480px;
+	height: 90px;
+	display: block;
+	float: left;
+}
+
+div.logo-small {
+	background: url(../images/logo_small.png) top left no-repeat;
+	width: 480px;
+	height: 90px;
+	display: block;
+	float: left;
+}
+
+div.logo.topleft, div.logo-large.topleft {
+	margin: 32px 0 0 60px;
+}
+
+div.logo-small.topleft {
+	margin: 32px 0 0 60px;
+}
+
+div.page-title {
+	position: absolute;
+	font-size: 32px;
+	font-weight: 600;
+	display: block;
+	text-algin: center;
+}
+
+/*****************************************************************************/
+/* Text */
+
+/* Default text attributes white: #F0F4F5 
+purple: #544c7d */
+div, p, span, a {
+	color: #F0F4F5;
+	font-family: Arial, "Bitstream Vera Sans", sans-serif;
+	font-weight: 700;
+	font-size: 28px;
+	font-style: normal;
+}
+
+/* Text colors */
+div.text-color-2, p.text-color-2, span.text-color-2, a.text-color-2 {
+	color: #FFFF92;
+}
+
+div.text-color-3, p.text-color-3, span.text-color-3, a.text-color-3 {
+	color: #333333;
+}
+
+
+/* Text sizes */
+div.text-xxsmall, p.text-xxsmall, span.text-xxsmall, a.text-xxsmall {
+	font-size: 18px;
+	font-weight: normal;
+}
+
+div.text-xsmall, p.text-xsmall, span.text-xsmall, a.text-xsmall {
+	font-size: 20px;
+	font-weight: normal;
+}
+
+div.text-small, p.text-small, span.text-small, a.text-small {
+	font-size: 24px;
+	font-weight: normal;
+}
+
+div.text-large, p.text-large, span.text-large, a.text-large {
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 36px;
+}
+
+div.text-xlarge, p.text-xlarge, span.text-xlarge, a.text-xlarge {
+	font-size: 38px;
+	font-weight: bold;
+	line-height: 60px;	
+}
+
+div.text-xxlarge, p.text-xxlarge, span.text-xxlarge, a.text-xxlarge {
+	font-size: 48px;
+	font-weight: bold;
+}
+
+/* Text style overwrite */
+div.text-bold, p.text-bold, span.text-bold, a.text-bold {
+	font-weight: bold;
+	font-style: normal;
+}
+
+div.text-regular, p.text-regular, span.text-regular, a.text-regular {
+	font-weight: normal;
+	font-style: normal;
+}
+
+div.text-italic, p.text-italic, span.text-italic, a.text-italic {
+	font-weight: normal;
+	font-style: italic;
+}
+
+/*****************************************************************************/
+/* Buttons and links */
+a {
+	text-decoration: none;
+	color: #F0F4F5;
+}
+
+a.active {
+	/*background-color: rgba(78,158,54,1);*/
+	background-color: #6b9c37;
+}
+
+a.button {
+	background-color: #155480;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	padding: 5px 10px;
+	color: #ffffff;
+}
+
+a.button.active {
+	background-color: #6b9c37;
+}
+
+a.button.color2 {
+	background-color: #D54D00;
+}
+
+a.button.color3 {
+	background-color: #01D0E2;
+}
+
+a.button-3:active, a.buttoncolor-3.active {
+	background-color: #3399cc;
+}
+
+/* special shapes */
+
+.arrow-left {
+	display: inline-block;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 20px 20px 20px 0;
+	border-color: transparent #ffffff transparent transparent;
+}
+
+.arrow-right {
+	display: inline-block;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 20px 0 20px 20px;
+	border-color: transparent transparent transparent #ffffff;
+}
